@@ -73,7 +73,7 @@ export default function HeaderMedia() {
 					</span>
 				</motion.div>
 				<Image
-					src="/images/client.png "
+					src="/images/client.png"
 					alt="client"
 					width={560}
 					height={490}

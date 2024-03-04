@@ -17,11 +17,7 @@ export default function Template({ children }: PropsWithChildren) {
 	useLayoutEffect(() => {
 		if (document.readyState === "complete") {
 			document.getElementById("loader")?.remove();
-		} else {
-			setTimeout(() => {
-				document.getElementById("loader")?.remove();
-			}, 10000);
-		}
+		}git
 	}, []);
 	return (
 		<motion.div
