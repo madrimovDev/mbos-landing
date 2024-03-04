@@ -24,16 +24,16 @@ export default function Footer() {
 					<h3 className="font-bold text-white">Sayt Xaritasi</h3>
 					<ul className="mt-5 space-y-1 text-sm font-medium">
 						<li>
-							<Link href="#">Bosh Sahifa</Link>
+							<Link href="#home">Bosh Sahifa</Link>
 						</li>
 						<li>
-							<Link href="#">Loyihalar</Link>
+							<Link href="#projects">Loyihalar</Link>
 						</li>
 						<li>
 							<Link href="#">Hamkorlar</Link>
 						</li>
 						<li>
-							<Link href="#">Bog&apos;lanish</Link>
+							<Link href="#contact">Bog&apos;lanish</Link>
 						</li>
 					</ul>
 				</div>
@@ -41,10 +41,10 @@ export default function Footer() {
 					<h3 className="font-bold text-white">Loyihalar</h3>
 					<ul className="mt-5 space-y-1 text-sm font-medium">
 						<li>
-							<Link href="#">Mbos - Online Navbar Olish</Link>
+							<Link href="#mbos">Mbos - Online Navbar Olish</Link>
 						</li>
 						<li>
-							<Link href="#">Taskie - Xodimarni Nazorat Qilish</Link>
+							<Link href="#taskie">Taskie - Xodimarni Nazorat Qilish</Link>
 						</li>
 						<li>
 							<Link href="#">GPS - Kutuzov</Link>
@@ -59,7 +59,7 @@ export default function Footer() {
 					<ul className="mt-5 space-y-1 text-sm font-medium">
 						<li>
 							<span className="flex items-start gap-2">
-								<MapPin size="1.2em" />
+								<MapPin  />
 								Tinchlik ko&apos;chasi 6 a uy, Urganch, Xorazm&nbsp;Viloyati
 							</span>
 						</li>
@@ -80,9 +80,6 @@ export default function Footer() {
 								<Mail size="1.2em" />
 								example@mail.co
 							</Link>
-						</li>
-						<li>
-							<Link href="#">Elektron Navbat</Link>
 						</li>
 					</ul>
 				</div>

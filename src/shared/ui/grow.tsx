@@ -1,14 +1,23 @@
-import { HTMLAttributes, PropsWithChildren } from "react";
+import { HTMLAttributes, forwardRef, PropsWithChildren } from "react";
 import { combineClassNames } from "../utils/combineClassNames";
 
-export default function Grow({
-	children,
-	className,
-}: PropsWithChildren & {
-	className?: HTMLAttributes<HTMLDivElement>["className"];
-}) {
+const Grow = forwardRef<
+	HTMLDivElement,
+	PropsWithChildren<{
+		className?: HTMLAttributes<HTMLDivElement>["className"];
+		id?: string
+	}>
+>(({ children, className, id }, ref) => {
 	return (
-		<div className={combineClassNames("flex-1", className)}>{children}</div>
+		<div
+			ref={ref}
+			id={id}
+			className={combineClassNames("flex-1", className)}
+		>
+			{children}
+		</div>
 	);
-}
+});
+Grow.displayName = "Grow";
+export default Grow;
 

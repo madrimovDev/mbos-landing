@@ -16,7 +16,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="uz">
-			<body className={`${inter.className} overflow-x-hidden`}>{children}</body>
+			<body className={`${inter.className} overflow-x-hidden`}>
+				{children}
+				<div id="modal"></div>
+			</body>
 		</html>
 	);
 }

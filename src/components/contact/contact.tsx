@@ -6,6 +6,7 @@ export default function Contact() {
 	return (
 		<Container
 			as="section"
+			id='contact'
 			className="mt-[80px] md:mt-[160px]"
 		>
 			<SectionTitle>Bog&apos;lanish</SectionTitle>

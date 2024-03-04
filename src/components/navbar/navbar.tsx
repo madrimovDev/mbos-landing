@@ -2,12 +2,29 @@
 import { useMenu } from "@/shared/hooks/useMenu";
 import { Button, Container, Grow, Logo, Menu } from "@/shared/ui";
 import { cn } from "@/shared/utils/cn";
+import { Variants, motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+const navbarVariants: Variants = {
+	initial: {
+		y: -10,
+		opacity: 0,
+	},
+	animate: {
+		opacity: 1,
+		y: 0,
+	},
+};
 
 export default function Navbar() {
 	const { ref, onToggle, open, onClose } = useMenu();
+	const router = useRouter()
 	return (
-		<div className="sticky w-full top-0  inset-x-0 bg-white shadow shadow-black/5 z-10">
+		<motion.div
+			variants={navbarVariants}
+			className="sticky w-full top-0  inset-x-0 bg-white shadow shadow-black/5 z-10"
+		>
 			<Container
 				as="nav"
 				className="flex justify-between items-center py-3 md:py-5"
@@ -42,7 +59,7 @@ export default function Navbar() {
 							onChangeHash={onClose}
 							items={[
 								{
-									href: "",
+									href: "home",
 									title: "Bosh Sahifa",
 								},
 								{
@@ -68,10 +85,10 @@ export default function Navbar() {
 					>
 						<MenuIcon size="1.2em" />
 					</button>
-					<Button className="hidden md:inline-block">Bog&apos;lanish</Button>
+					<Button onClick={() => router.push('#contact')} className="hidden md:inline-block">Bog&apos;lanish</Button>
 				</Grow>
 			</Container>
-		</div>
+		</motion.div>
 	);
 }
 
