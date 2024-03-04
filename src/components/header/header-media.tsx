@@ -58,7 +58,7 @@ export default function HeaderMedia() {
 					<span className="text-xl sm:text-3xl text-softBlack font-black">
 						200+
 					</span>
-					<span className="font-medium text-softBlack">MIJOZLAR</span>
+					<span className="font-medium text-softBlack">Hamkorlar</span>
 				</motion.div>
 				<motion.div
 					variants={cardVariant}

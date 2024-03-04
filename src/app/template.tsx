@@ -1,5 +1,6 @@
 "use client";
 import ContactModal from "@/components/core/contact-modal";
+import Test from "@/components/test/test";
 import { motion, Variants } from "framer-motion";
 import Script from "next/script";
 import { PropsWithChildren, useLayoutEffect } from "react";
@@ -29,6 +30,7 @@ export default function Template({ children }: PropsWithChildren) {
 			</div>
 			{children}
 			<ContactModal />
+			<Test />
 			<Script
 				id="for-loader"
 				strategy="afterInteractive"
