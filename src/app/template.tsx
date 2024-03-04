@@ -1,6 +1,7 @@
 "use client";
 import ContactModal from "@/components/core/contact-modal";
 import { motion, Variants } from "framer-motion";
+import Script from "next/script";
 import { PropsWithChildren, useLayoutEffect } from "react";
 
 const templateVariant: Variants = {
@@ -14,11 +15,6 @@ const templateVariant: Variants = {
 };
 
 export default function Template({ children }: PropsWithChildren) {
-	useLayoutEffect(() => {
-		if (document.readyState === "complete") {
-			document.getElementById("loader")?.remove();
-		}
-	}, []);
 	return (
 		<motion.div
 			variants={templateVariant}
@@ -33,6 +29,15 @@ export default function Template({ children }: PropsWithChildren) {
 			</div>
 			{children}
 			<ContactModal />
+			<Script
+				id="for-loader"
+				strategy="afterInteractive"
+				dangerouslySetInnerHTML={{
+					__html: `
+					document.getElementById('loader').remove();
+			`,
+				}}
+			/>
 		</motion.div>
 	);
 }
