@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 		"onlayn do'konlar",
 		"SEO",
 		"MBOS",
-		"Taskie"
+		"Taskie",
 	],
 	openGraph: {
 		type: "website",
@@ -65,6 +66,22 @@ export default function RootLayout({
 			<body className={`${inter.className} overflow-x-hidden`}>
 				{children}
 				<div id="modal"></div>
+				<Script
+					id="for-loader"
+					strategy="afterInteractive"
+					dangerouslySetInnerHTML={{
+						__html: `
+						let previousUrl = '';
+						const observer = new MutationObserver(function(mutations) {
+							if (location.href !== previousUrl) {
+								document.getElementById('loader')?.remove();
+								}
+						});
+						const config = {subtree: true, childList: true};
+						observer.observe(document, config);
+						document.getElementById('loader').remove();`,
+					}}
+				/>
 			</body>
 		</html>
 	);

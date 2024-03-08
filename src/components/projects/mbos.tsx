@@ -2,6 +2,7 @@ import { Button, Grow } from "@/shared/ui";
 import { Variants, motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const MotionGrow = motion(Grow);
 
@@ -128,10 +129,13 @@ export default function Mbos() {
 				</motion.div>
 				<div className="flex items-center gap-4">
 					<Button>Bog&apos;lanish</Button>
-					<button className="flex items-center gap-2 font-semibold text-softBlack hover:text-black">
+					<Link
+						href="mbos"
+						className="flex items-center gap-2 font-semibold text-softBlack hover:text-black"
+					>
 						Batafsil
 						<ExternalLink size="1em" />
-					</button>
+					</Link>
 				</div>
 			</motion.div>
 		</MotionGrow>

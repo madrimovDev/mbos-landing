@@ -31,15 +31,6 @@ export default function Template({ children }: PropsWithChildren) {
 			{children}
 			<ContactModal />
 			<Test />
-			<Script
-				id="for-loader"
-				strategy="afterInteractive"
-				dangerouslySetInnerHTML={{
-					__html: `
-					document.getElementById('loader').remove();
-			`,
-				}}
-			/>
 		</motion.div>
 	);
 }
