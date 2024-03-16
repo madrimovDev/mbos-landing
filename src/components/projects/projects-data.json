@@ -1,0 +1,98 @@
+[
+	{
+		"name": "MBOS - Online Navbar Xizmati",
+		"descriptions": [
+			"- Hozirgi kunda eng ko’p navbatlar kuzatilib turgan Meditsinada, Klinikalarda, Metanlarda, Avto moykalarda borib kutib o’tirishi mumkun bo’lgan joylarni hammasiga navbatlarni tizimlashtirib qo’yib beramiz.",
+			"- Online navbat olib o’z vaqtida ishini hal qilib keladi.Undan tashqari yoz oylarida Metanlardan va Moykalardan Cashbacklar ham beriladi. Cashbacklarni yig’ib turib ham foydalansa bo’ladi."
+		],
+		"imgs": [
+			{
+				"src": "/images/ip-portrait.png",
+				"alt": "MBOS",
+				"width": 256,
+				"height": 516
+			},
+			{
+				"src": "/images/ip2-portrait.png",
+				"alt": "MBOS",
+				"width": 256,
+				"height": 516
+			}
+		],
+		"stats": [
+			{
+				"value": "12K",
+				"name": "Foydalanuvchilar"
+			},
+			{
+				"value": "20+",
+				"name": "Hamkorlar"
+			}
+		],
+		"downloadLinks": [
+			{
+				"href": "https://www.mbos.uz",
+				"name": "Google Play",
+				"img": "/"
+			},
+			{
+				"href": "https://www.mbos.uz",
+				"name": "App Store",
+				"img": "/"
+			}
+		]
+	},
+	{
+		"name": "Taskie - Korxonaning ish faoliyatini avtomatlashtirish",
+		"descriptions": [
+			"- Taskie dasturi Hodimlarni  kelib ketishi asosan  vaqtida kelishi,  tapshiriqlar online elektron beriladi dedline vaqtida o’zi hodimlarni  topshiriqlarini kechiktirmasdan  so’rab oladi",
+			"- Hodimlarni ish vaqtida qayerda yurganini lokatsiya orqali teshkirib tursa ham bo’lad"
+		],
+		"imgs": [
+			{
+				"src": "/images/taskie.png",
+				"alt": "Taskie",
+				"width": 600,
+				"height": 500
+			}
+		],
+		"stats": [
+			{
+				"value": "500+",
+				"name": "Foydalanuvchilar"
+			},
+			{
+				"value": "20+",
+				"name": "Hamkorlar"
+			}
+		],
+		"downloadLinks": [
+			{
+				"href": "https://play.google.com/store/apps/details?id=com.taskie",
+				"name": "Google Play",
+				"img": "/"
+			},
+			{
+				"href": "https://apps.apple.com/uz/app/taskie/id1549449444",
+				"name": "App Store",
+				"img": "/"
+			}
+		]
+	},
+	{
+		"name": "MBOS GPS",
+		"imgs": [
+			{
+				"src": "/images/gps-tracking.jpg",
+				"alt": "Gps",
+				"width": 500,
+				"height": 309
+			}
+		],
+		"descriptions": [
+			"GPS ni  biznes egalari, tadbirkorlar o'z ish faoliyatlariga tadbiq qilishlari mumkin.",
+			"Mashinalar qayerdaligi, qancha yoqilg'i sarf qilgani, qancha masofa bosib o'tgani, qancha tezlikda harakatlangani, undan tashqari muzlatgichli mashinalar bo'lsa gradusni o'lchab borish imkoniyatlari mavjud. Chet elga chiqadigan mashinalarga ham o'rnatish mumkin"
+		]
+	}
+]
+

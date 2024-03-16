@@ -1,10 +1,13 @@
-'use client'
+"use client";
 import { Container, SectionTitle } from "@/shared/ui";
 import Mbos from "./mbos";
-import Taskie from "./taskie";
 import { Variants, motion } from "framer-motion";
+import projectData from "./projects-data.json";
+import { Project } from "./project-data";
 
-const MotionContainer = motion(Container)
+const projectsData = projectData as Project[];
+
+const MotionContainer = motion(Container);
 const aboutVariants: Variants = {
 	initial: {
 		opacity: 0,
@@ -18,7 +21,7 @@ const aboutVariants: Variants = {
 	},
 };
 
-const MotionTitle = motion(SectionTitle)
+const MotionTitle = motion(SectionTitle);
 
 export default function Projects() {
 	return (
@@ -26,7 +29,7 @@ export default function Projects() {
 			as="section"
 			initial="initial"
 			whileInView="animate"
-			id='projects'
+			id="projects"
 			viewport={{
 				once: false,
 				margin: "-100px",
@@ -34,9 +37,17 @@ export default function Projects() {
 			className="mt-[80px] md:mt-[160px]"
 		>
 			<MotionTitle variants={aboutVariants}>Loyihalar</MotionTitle>
-			<motion.div variants={aboutVariants} className="flex flex-col gap-[80px] md:gap-[160px] mt-[50px] md:mt-[100px]">
-				<Mbos />
-				<Taskie />
+			<motion.div
+				variants={aboutVariants}
+				className="flex flex-col gap-[80px] md:gap-[160px] mt-[50px] md:mt-[100px]"
+			>
+				{projectsData.map((project, index) => (
+					<Mbos
+						key={index}
+						project={project}
+						dir={index % 2 === 1 ? "right" : "left"}
+					/>
+				))}
 			</motion.div>
 		</MotionContainer>
 	);

@@ -3,6 +3,8 @@ import { Variants, motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Project } from "./project-data";
+import { cn } from "@/shared/utils/cn";
 
 const MotionGrow = motion(Grow);
 
@@ -21,7 +23,13 @@ const aboutVariants: Variants = {
 	},
 };
 
-export default function Mbos() {
+export default function Mbos({
+	project,
+	dir,
+}: {
+	project: Project;
+	dir: "left" | "right";
+}) {
 	return (
 		<MotionGrow
 			variants={aboutVariants}
@@ -32,26 +40,33 @@ export default function Mbos() {
 				once: true,
 				margin: "-100px",
 			}}
-			className="flex flex-col md:flex-row items-center"
+			className={cn("flex flex-col items-center h-max", {
+				"md:flex-row": dir === "left",
+				"md:flex-row-reverse": dir === "right",
+			})}
 		>
 			<motion.div
 				variants={aboutVariants}
-				className="flex-grow relative w-full grid place-items-center mb-10 md:mb-0"
+				className="flex-grow relative w-full h-full flex items-center justify-center mb-10 md:mb-0"
 			>
-				<Image
-					src="/images/ip-portrait.png"
-					className="w-1/2 h-auto md:w-auto -ml-20"
-					alt="mbos"
-					width={254}
-					height={516}
-				/>
-				<Image
-					src="/images/ip2-portrait.png"
-					className="w-1/2 h-auto md:w-auto absolute top-0 bottom-0 left-1/2 md:left-1/3 -translate-x-1/2"
-					alt="mbos"
-					width={254}
-					height={516}
-				/>
+				{project.imgs?.map((img, index, arr) => (
+					<Image
+						key={img.alt}
+						src={img.src}
+						className={cn(`h-full`, {
+							"-mr-24": index > 0 && index === 0,
+							"-ml-24": index > 0 && index === 1,
+							"w-1/2": arr.length > 1,
+							"w-full": !arr.length,
+						})}
+						style={{
+							maxWidth: arr.length === 2 ? img.width + "px" : "",
+						}}
+						alt={img.alt}
+						width={img.width}
+						height={img.height}
+					/>
+				))}
 			</motion.div>
 			<motion.div
 				variants={aboutVariants}
@@ -65,69 +80,68 @@ export default function Mbos() {
 			>
 				<motion.h3
 					variants={aboutVariants}
-					className="text-3xl font-bold"
+					className="text-3xl font-bold mb-4"
 				>
-					MBOS - Online Navbat Xizmati
+					{project.name}
 				</motion.h3>
-				<motion.p
-					variants={aboutVariants}
-					className="text-lightBlack leading-8 mt-5 mb-8"
-				>
-					Ilova o&apos;z ichinda ko&apos;plab online navbat sohalarni ichiga
-					olgan. Xususan Metan to&apos;ldirish shaxobchalari, Avtomoyka,
-					Klinika, Bank, va boshqa ko&apos;plab sohalarni o&apos;z ichiga olgan.
-				</motion.p>
+				{project.descriptions.map((desc) => (
+					<motion.p
+						key={desc}
+						variants={aboutVariants}
+						className="text-lightBlack leading-8 my-2"
+					>
+						{desc}
+					</motion.p>
+				))}
 				<motion.div
 					variants={aboutVariants}
 					className="flex gap-10"
 				>
-					<motion.div variants={aboutVariants}>
-						<motion.h4
+					{project.stats?.map((stat) => (
+						<motion.div
+							key={stat.name}
 							variants={aboutVariants}
-							className="text-5xl font-bold"
 						>
-							11K
-						</motion.h4>
-						<motion.p
-							variants={aboutVariants}
-							className="text-softBlack"
-						>
-							Foydalanuvchilar
-						</motion.p>
-					</motion.div>
-					<motion.div variants={aboutVariants}>
-						<motion.h4
-							variants={aboutVariants}
-							className="text-5xl font-bold"
-						>
-							20+
-						</motion.h4>
-						<motion.p
-							variants={aboutVariants}
-							className="text-softBlack"
-						>
-							Hamkorlar
-						</motion.p>
-					</motion.div>
+							<motion.h4
+								variants={aboutVariants}
+								className="text-5xl font-bold"
+							>
+								{stat.value}
+							</motion.h4>
+							<motion.p
+								variants={aboutVariants}
+								className="text-softBlack"
+							>
+								{stat.name}
+							</motion.p>
+						</motion.div>
+					))}
 				</motion.div>
-				<motion.div
-					variants={aboutVariants}
-					className="flex gap-4 mt-8 mb-10"
-				>
-					<Image
-						src="/images/google-play.png"
-						alt="Google Play"
-						width={120}
-						height={30}
-					/>
-					<Image
-						src="/images/app-store.png"
-						alt="App Store"
-						width={110}
-						height={30}
-					/>
-				</motion.div>
-				<div className="flex items-center gap-4">
+				{project.downloadLinks && (
+					<motion.div
+						variants={aboutVariants}
+						className="flex gap-4 mt-8 items-stretch"
+					>
+						{project.downloadLinks?.map((link) => (
+							<Link
+								key={link.href}
+								href={link.href}
+								className="h-auto inline-block"
+							>
+								<Image
+									src={`/images/${
+										link.name === "Google Play" ? "google-play" : "app-store"
+									}.png`}
+									alt={link.name}
+									className="object-contain h-full"
+									width={120}
+									height={30}
+								/>
+							</Link>
+						))}
+					</motion.div>
+				)}
+				<div className="flex items-center gap-4 mt-10">
 					<Button>Bog&apos;lanish</Button>
 					<Link
 						href="mbos"

@@ -71,8 +71,8 @@ export default function Navbar() {
 									title: "Loyihalar",
 								},
 								{
-									href: "partners",
-									title: "Hamkorlar",
+									href: "employees",
+									title: "Xodimlar",
 								},
 							]}
 						/>
