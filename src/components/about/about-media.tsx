@@ -31,10 +31,7 @@ export default function AboutMedia() {
 				variants={aboutVariants}
 				className="row-start-1 col-start-1 row-span-4 rounded-xl overflow-hidden relative group border-4 "
 			>
-				<div className="flex flex-col justify-end p-2 absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-all w-full h-1/2 z-[1]">
-					<h3 className="font-bold text-white">Madrimov Xudoshukur</h3>
-					<p className="text-white">Frontend Dasturchi</p>
-				</div>
+				 
 				<Image
 					src="/images/developer.jpg"
 					alt="Developer"
@@ -49,10 +46,7 @@ export default function AboutMedia() {
 				variants={aboutVariants}
 				className="row-span-2 col-start-1 row-start-5 rounded-xl overflow-hidden relative group border-4"
 			>
-				<div className="flex flex-col justify-end p-2 absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-all w-full h-1/2 z-[1]">
-					<h3 className="font-bold text-white">Madrimov Xudoshukur</h3>
-					<p className="text-white">Frontend Dasturchi</p>
-				</div>
+				 
 				<Image
 					src="/images/developer.jpg"
 					alt="Developer"
@@ -67,10 +61,7 @@ export default function AboutMedia() {
 				variants={aboutVariants}
 				className="row-span-2 col-start-2 row-start-1 rounded-xl overflow-hidden relative group border-4 "
 			>
-				<div className="flex flex-col justify-end p-2 absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-all w-full h-1/2 z-[1]">
-					<h3 className="font-bold text-white">Madrimov Xudoshukur</h3>
-					<p className="text-white">Frontend Dasturchi</p>
-				</div>
+				 
 				<Image
 					src="/images/developer.jpg"
 					alt="Developer"
@@ -85,10 +76,6 @@ export default function AboutMedia() {
 				variants={aboutVariants}
 				className="row-span-4 col-start-2 row-start-3 rounded-xl overflow-hidden relative group border-4 "
 			>
-				<div className="flex flex-col justify-end p-2 absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-all w-full h-1/2 z-[1]">
-					<h3 className="font-bold text-white">Madrimov Xudoshukur</h3>
-					<p className="text-white">Frontend Dasturchi</p>
-				</div>
 				<Image
 					src="/images/developer.jpg"
 					className="h-full object-cover rounded-xl"

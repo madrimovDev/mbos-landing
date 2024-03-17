@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project } from "./project-data";
 import { cn } from "@/shared/utils/cn";
+import useModalStore from "../core/contact-modal-store";
 
 const MotionGrow = motion(Grow);
 
@@ -30,6 +31,8 @@ export default function Mbos({
 	project: Project;
 	dir: "left" | "right";
 }) {
+	const openModal = useModalStore((s) => s.openModal);
+
 	return (
 		<MotionGrow
 			variants={aboutVariants}
@@ -142,15 +145,8 @@ export default function Mbos({
 					</motion.div>
 				)}
 				<div className="flex items-center gap-4 mt-10">
-					<Button>Bog&apos;lanish</Button>
-					<Link
-						href="mbos"
-						className="flex items-center gap-2 font-semibold text-softBlack hover:text-black"
-					>
-						Batafsil
-						<ExternalLink size="1em" />
-					</Link>
-				</div>
+					<Button onClick={openModal}>Bog&apos;lanish</Button>
+				`</div>
 			</motion.div>
 		</MotionGrow>
 	);

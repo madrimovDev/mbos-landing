@@ -8,6 +8,7 @@ const About = lazy(() => import("../components/about/about"));
 const Projects = lazy(() => import("../components/projects/projects"));
 const Employees = lazy(() => import("../components/employees/employees"));
 const Contact = lazy(() => import("../components/contact/contact"));
+const Services = lazy(() => import("../components/services/services"));
 
 export default function Home() {
 	return (
@@ -16,6 +17,7 @@ export default function Home() {
 			<Header />
 			<About />
 			<Projects />
+			<Services />
 			<Employees />
 			<Contact />
 			<Footer />
