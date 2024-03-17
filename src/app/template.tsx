@@ -22,12 +22,6 @@ export default function Template({ children }: PropsWithChildren) {
 			initial="initial"
 			animate="animate"
 		>
-			<div
-				id="loader"
-				className="fixed inset-0 z-50 w-full h-screen bg-white grid place-items-center"
-			>
-				<div className="custom-loader"></div>
-			</div>
 			{children}
 			<ContactModal />
 			<Test />

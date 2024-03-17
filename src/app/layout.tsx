@@ -66,22 +66,6 @@ export default function RootLayout({
 			<body className={`${inter.className} overflow-x-hidden`}>
 				{children}
 				<div id="modal"></div>
-				<Script
-					id="for-loader"
-					strategy="afterInteractive"
-					dangerouslySetInnerHTML={{
-						__html: `
-						let previousUrl = '';
-						const observer = new MutationObserver(function(mutations) {
-							if (location.href !== previousUrl) {
-								document.getElementById('loader')?.remove();
-								}
-						});
-						const config = {subtree: true, childList: true};
-						observer.observe(document, config);
-						document.getElementById('loader').remove();`,
-					}}
-				/>
 			</body>
 		</html>
 	);

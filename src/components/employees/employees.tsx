@@ -24,7 +24,10 @@ const imgSrc = [
 
 export default function employees() {
 	return (
-		<div className="mt-[160px] px-4" id='employees'>
+		<div
+			className="mt-[160px] px-4 container"
+			id="employees"
+		>
 			<SectionTitle className="mb-16">Xodimlar</SectionTitle>
 			<Swiper
 				modules={[Navigation, A11y, Autoplay]}
@@ -51,12 +54,14 @@ export default function employees() {
 					},
 				}}
 			>
-				{imgSrc.map((img, index) => {
+				{Array.from(new Array(12)).map((_, index) => {
 					return (
 						<SwiperSlide key={index}>
 							<div className="rounded-xl overflow-hidden">
 								<Image
-									src={img}
+									src={`/images/xodimlar/${index + 1}-min.jpeg`}
+									placeholder="blur"
+									blurDataURL={`/images/xodimlar/${index + 1}-min-blur.jpeg`}
 									alt="img"
 									className="object-cover w-[450px] h-[500px] rounded-xl overflow-hidden hover:scale-125 transition-all grayscale hover:grayscale-0"
 									width={450}
