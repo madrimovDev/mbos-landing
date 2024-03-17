@@ -24,7 +24,7 @@ export default function Services() {
 					</div>
 					<p className="text-lightBlack flex-1 leading-relaxed">
 						Internet orqali elektronik sharoitda joylashgan, maqsadli
-						ma'lumotlar va xizmatlarni taqdim etuvchi virtual platforma.
+						ma&apos;lumotlar va xizmatlarni taqdim etuvchi virtual platforma.
 					</p>
 					<button className="group-hover:text-blue-500 inline-flex items-center gap-2 text-sm">
 						Buyurtma Berish <ArrowUpRight size="1.5em" />
@@ -64,13 +64,12 @@ export default function Services() {
 								strokeWidth={1}
 							/>
 						</span>
-						<h3 className="text-2xl font-bold text-softBlack">
-							CRM Tizimlar
-						</h3>
+						<h3 className="text-2xl font-bold text-softBlack">CRM Tizimlar</h3>
 					</div>
 					<p className="text-lightBlack flex-1 leading-relaxed">
 						Kompaniyalar uchun mijozlar bilan aloqalarni boshqarish va xizmat
-						ko'rsatish jarayonlarini avtomatlashtirish dasturiy ta'minotidir.
+						ko&apos;rsatish jarayonlarini avtomatlashtirish dasturiy
+						ta&apos;minotidir.
 					</p>
 					<button className="group-hover:text-blue-500 inline-flex items-center gap-2 text-sm">
 						Buyurtma Berish <ArrowUpRight size="1.5em" />
@@ -92,7 +91,8 @@ export default function Services() {
 						</h3>
 					</div>
 					<p className="text-lightBlack flex-1 leading-relaxed">
-						Telegramda ishlaydigan dastur. Mijozlar bilan aloqani avtomatlashtirish, xizmatlarni taklif qilish uchun yordam beradi.
+						Telegramda ishlaydigan dastur. Mijozlar bilan aloqani
+						avtomatlashtirish, xizmatlarni taklif qilish uchun yordam beradi.
 					</p>
 					<button className="group-hover:text-blue-500 inline-flex items-center gap-2 text-sm">
 						Buyurtma Berish <ArrowUpRight size="1.5em" />
