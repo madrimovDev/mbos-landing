@@ -24,7 +24,7 @@ export default function Template({ children }: PropsWithChildren) {
 		>
 			{children}
 			<ContactModal />
-			<Test />
+			{/* <Test /> */}
 		</motion.div>
 	);
 }

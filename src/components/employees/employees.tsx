@@ -7,19 +7,55 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import { SectionTitle } from "@/shared/ui";
 
-const imgSrc = [
-	"/images/xodimlar/1-min.png",
-	"/images/xodimlar/2-min.JPG",
-	"/images/xodimlar/3-min.JPG",
-	"/images/xodimlar/4-min.JPG",
-	"/images/xodimlar/5-min.JPG",
-	"/images/xodimlar/6-min.JPG",
-	"/images/xodimlar/7-min.JPG",
-	"/images/xodimlar/8-min.png",
-	"/images/xodimlar/9-min.jpg",
-	"/images/xodimlar/10-min.jpg",
-	"/images/xodimlar/11-min.jpg",
-	"/images/xodimlar/12-min.jpg",
+const employeesArray = [
+	{
+		img: "/images/xodimlar/azizbek.jpg",
+		blurred: "/images/xodimlar/azizbek-blur.jpg",
+		name: "Abdullayev Azizbek",
+		position: "B2B Menejeri",
+	},
+	{
+		img: "/images/xodimlar/dilshod.jpg",
+		blurred: "/images/xodimlar/dilshod-blur.jpg",
+		name: "Sahabutdinov Dilshod",
+		position: "Texnik Departament Rahbari",
+	},
+	{
+		img: "/images/xodimlar/madina.jpg",
+		blurred: "/images/xodimlar/madina-blur.jpg",
+		name: "Saparova Madina",
+		position: "Sifat Nazorati Menejeri",
+	},
+	{
+		img: "/images/xodimlar/mansur.jpg",
+		blurred: "/images/xodimlar/mansur-blur.jpg",
+		name: "Yusupov Mansur",
+		position: "Kompaniya Rahbari",
+	},
+	{
+		img: "/images/xodimlar/muxtor.jpg",
+		blurred: "/images/xodimlar/muxtor-blur.jpg",
+		name: "Saparboyev Muxtor",
+		position: "Dasturchi",
+	},
+	{
+		img: "/images/xodimlar/quvondiq.jpg",
+		blurred: "/images/xodimlar/quvondiq-blur.jpg",
+		name: "Kurbaniyozov Quvondiq",
+		position: "Sotuv Departamenti rahbari",
+	},
+	{
+		img: "/images/xodimlar/shoxida.jpg",
+		blurred: "/images/xodimlar/shoxida-blur.jpg",
+		name: "Rajabboyeva Shohida",
+		position: "Moliya Departamenti rahbari",
+	},
+	{
+		img: "/images/xodimlar/xudoyshukur.jpg",
+		blurred: "/images/xodimlar/xudoyshukur-blur.jpg",
+		name: "Masharipov Xudoyshukur",
+		position: "Texnik Dasturchi",
+	},
 ];
 
 export default function employees() {
@@ -49,24 +85,28 @@ export default function employees() {
 						spaceBetween: 40,
 					},
 					1024: {
-						slidesPerView: 5,
+						slidesPerView: 4,
 						spaceBetween: 50,
 					},
 				}}
 			>
-				{Array.from(new Array(12)).map((_, index) => {
+				{employeesArray.map((item, index) => {
 					return (
 						<SwiperSlide key={index}>
 							<div className="rounded-xl overflow-hidden">
 								<Image
-									src={`/images/xodimlar/${index + 1}-min.jpeg`}
+									src={item.img}
 									placeholder="blur"
-									blurDataURL={`/images/xodimlar/${index + 1}-min-blur.jpeg`}
+									blurDataURL={item.blurred}
 									alt="img"
-									className="object-cover w-[450px] h-[500px] rounded-xl overflow-hidden hover:scale-125 transition-all grayscale hover:grayscale-0"
+									className="object-cover w-[450px] h-[350px] rounded-xl overflow-hidden"
 									width={450}
-									height={500}
+									height={300}
 								/>
+								<div className="mt-2">
+									<h2 className="font-bold">{item.name}</h2>
+									<p className="capitalize">{item.position}</p>
+								</div>
 							</div>
 						</SwiperSlide>
 					);

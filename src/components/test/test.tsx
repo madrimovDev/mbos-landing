@@ -10,7 +10,7 @@ export default function Test() {
 				<div className="h-full aspect-square  grid place-items-center text-orange-600">
 					<AlertTriangle size="1.4em" />
 				</div>
-				Sayt hozir Test rejimida ishlamoqda{" "}
+				Sayt hozir Test rejimida ishlamoqda
 			</div>
 			<button onClick={() => setOpen(false)}>
 				<X />
