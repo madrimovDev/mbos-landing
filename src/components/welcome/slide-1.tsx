@@ -14,10 +14,10 @@ export default function Slide1({ subtitle, title, img }: Props) {
 	return (
 		<div className="w-full h-screen grid place-items-center mt-[-80px] bg-black">
 			<div className="container text-white relative z-10">
-				<h1 className="text-center text-6xl font-black text-white">
+				<h1 className="text-center text-5xl md:text-6xl font-black text-white">
 					<span className="text-primary">{title.mark}</span> {title.text}
 				</h1>
-				<h2 className="text-center mt-8 text-3xl capitalize">{subtitle}</h2>
+				<h2 className="text-center mt-8 text-2xl md:text-3xl capitalize">{subtitle}</h2>
 			</div>
 			<button className="absolute bottom-20 left-1/2 -translate-x-1/2 scale-150 z-10 text-white">
 				<svg
