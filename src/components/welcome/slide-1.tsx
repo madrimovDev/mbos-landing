@@ -40,7 +40,7 @@ export default function Slide1({ subtitle, title, img, animate, index }: Props) 
 							type: "keyframe",
 						},
 					}}
-					className="text-center mt-8 text-2xl md:text-3xl capitalize"
+					className="text-center mt-8 text-xl sm:text-2xl md:text-3xl capitalize"
 				>
 					{subtitle}
 				</motion.h2>

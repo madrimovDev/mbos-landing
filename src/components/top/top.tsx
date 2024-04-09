@@ -3,11 +3,11 @@ import { Icon } from "@/shared/icons";
 export default function Top() {
 	return (
 		<div className="bg-blue-500 text-white">
-			<div className="container py-1 text-sm flex justify-between items-center">
+			<div className="container py-1 text-xs md:text-sm flex justify-between items-center">
 				<span>
-					Murojaat uchun: <b>+99 891 123 45 67</b>
+					<b>+99 891 123 45 67</b>
 				</span>
-				<ul className="fill-white flex gap-2 scale-75">
+				<ul className="fill-white flex gap-2 scale-75 -mr-4">
 					<li>
 						<a
 							href=""
