@@ -14,7 +14,7 @@ interface Props {
 const imgs = ['/images/bg-1.jpg','/images/bg-2.jpg','/images/bg-3.jpg']
 export default function Slide1({ subtitle, title, img, animate, index }: Props) {
 	return (
-		<div className="w-full h-screen grid place-items-center mt-[-91px] md:mt-[-108px] bg-black">
+		<div className="w-full h-[calc(100vh-91px)] md:h-[calc(100vh-110px)] grid place-items-center bg-black">
 			<div className="container text-white relative z-10">
 				<motion.h1
 					animate={{
