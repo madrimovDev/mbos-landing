@@ -54,6 +54,7 @@ export default function Welcome() {
 					return (
 						<SwiperSlide key={index}>
 							<Slide1
+								index={index}
 								img={i.img}
 								title={{
 									mark: i.title.mark,

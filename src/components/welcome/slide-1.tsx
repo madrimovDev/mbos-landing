@@ -9,9 +9,10 @@ interface Props {
 	subtitle: string;
 	img: string;
 	animate: boolean;
+	index: number
 }
-
-export default function Slide1({ subtitle, title, img, animate }: Props) {
+const imgs = ['/images/bg-1.jpg','/images/bg-2.jpg','/images/bg-3.jpg']
+export default function Slide1({ subtitle, title, img, animate, index }: Props) {
 	return (
 		<div className="w-full h-screen grid place-items-center mt-[-80px] bg-black">
 			<div className="container text-white relative z-10">
@@ -77,10 +78,13 @@ export default function Slide1({ subtitle, title, img, animate }: Props) {
 					/>
 				</svg>
 			</button>
-			<div className="w-full h-2/3 absolute inset-x-0 bottom-0 z-[1]">
-				<div className="w-full h-full absolute inset-0 bg-gradient-to-b from-black to-black/0 z-[1]" />
+			<div className="w-full h-full absolute inset-x-0 bottom-0 z-[1]">
+				<div className="w-full h-full absolute inset-0 bg-gradient-to-b from-black via-black/60  to-black/20 z-[1]" />
 				<div
-					className={`bg-[url('/images/bg.jpg')] w-full h-full bg-bottom bg-cover grayscale opacity-50`}
+					style={{
+						backgroundImage: `url(${imgs[index]})`,
+					}}
+					className={`w-full h-full bg-bottom bg-cover grayscale opacity-50`}
 				/>
 			</div>
 		</div>
