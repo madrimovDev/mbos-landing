@@ -23,11 +23,11 @@ export default function Navbar() {
 	return (
 		<motion.div
 			variants={navbarVariants}
-			className="sticky w-full top-0  inset-x-0 bg-white shadow shadow-black/5 z-10"
+			className="sticky w-full top-0  inset-x-0 bg-white shadow-md z-10"
 		>
 			<Container
 				as="nav"
-				className="flex justify-between items-center py-3 md:py-5"
+				className="flex justify-between items-center py-3 md:py-4"
 			>
 				<Grow>
 					<div className="w-fit">
@@ -85,7 +85,7 @@ export default function Navbar() {
 					>
 						<MenuIcon size="1.2em" />
 					</button>
-					<Button onClick={() => router.push('#contact')} className="hidden md:inline-block">Bog&apos;lanish</Button>
+					<Button onClick={() => router.push('#contact')} className="hidden md:inline-block text-sm">Bog&apos;lanish</Button>
 				</Grow>
 			</Container>
 		</motion.div>

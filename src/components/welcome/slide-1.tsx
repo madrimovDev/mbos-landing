@@ -7,17 +7,42 @@ interface Props {
 		text: string;
 	};
 	subtitle: string;
-	img: string
+	img: string;
+	animate: boolean;
 }
 
-export default function Slide1({ subtitle, title, img }: Props) {
+export default function Slide1({ subtitle, title, img, animate }: Props) {
 	return (
 		<div className="w-full h-screen grid place-items-center mt-[-80px] bg-black">
 			<div className="container text-white relative z-10">
-				<h1 className="text-center text-5xl md:text-6xl font-black text-white">
+				<motion.h1
+					animate={{
+						opacity: animate ? 1 : 0,
+						y: animate ? 0 : -20,
+						transition: {
+							delay: 1,
+							duration: 1,
+							type: "keyframe",
+						},
+					}}
+					className="text-center text-5xl md:text-6xl font-black text-white"
+				>
 					<span className="text-primary">{title.mark}</span> {title.text}
-				</h1>
-				<h2 className="text-center mt-8 text-2xl md:text-3xl capitalize">{subtitle}</h2>
+				</motion.h1>
+				<motion.h2
+					animate={{
+						opacity: animate ? 1 : 0,
+						y: animate ? 0 : -20,
+						transition: {
+							delay: 1.4,
+							duration: 1,
+							type: "keyframe",
+						},
+					}}
+					className="text-center mt-8 text-2xl md:text-3xl capitalize"
+				>
+					{subtitle}
+				</motion.h2>
 			</div>
 			<button className="absolute bottom-20 left-1/2 -translate-x-1/2 scale-150 z-10 text-white">
 				<svg
@@ -54,7 +79,9 @@ export default function Slide1({ subtitle, title, img }: Props) {
 			</button>
 			<div className="w-full h-2/3 absolute inset-x-0 bottom-0 z-[1]">
 				<div className="w-full h-full absolute inset-0 bg-gradient-to-b from-black to-black/0 z-[1]" />
-				<div className={`bg-[url('/images/bg.jpg')] w-full h-full bg-bottom bg-cover grayscale opacity-50`} />
+				<div
+					className={`bg-[url('/images/bg.jpg')] w-full h-full bg-bottom bg-cover grayscale opacity-50`}
+				/>
 			</div>
 		</div>
 	);

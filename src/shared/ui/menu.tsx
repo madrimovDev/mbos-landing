@@ -38,7 +38,7 @@ export default function Menu({
 						key={item.title}
 						onClick={onChangeHash}
 						className={cn(
-							"relative before:w-full before:h-[2px] before:absolute before:transition-colors transition-colors font-medium before:inset-x-0 before:-bottom-1 before:rounded-full",
+							"relative before:w-full before:h-[2px] before:absolute before:transition-colors transition-colors font-medium before:inset-x-0 before:-bottom-1 before:rounded-full hover:text-primary",
 							{
 								"before:bg-primary text-primary": activeKey === item.href,
 								"before:bg-transparent": activeKey !== item.href,
@@ -48,6 +48,7 @@ export default function Menu({
 						<Link
 							onClick={() => changeActiveKey(item.href)}
 							href={"#" + item.href}
+							
 						>
 							{item.title}
 						</Link>

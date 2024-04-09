@@ -1,4 +1,4 @@
-import { Footer } from "@/components";
+import { Footer, Top } from "@/components";
 import Loading from "@/components/core/loading";
 import { Suspense, lazy } from "react";
 
@@ -14,6 +14,7 @@ const Welcome = lazy(() => import("@/components/welcome/welcome"));
 export default function Home() {
 	return (
 		<Suspense fallback={<Loading />}>
+			<Top />
 			<Navbar />
 			<Welcome />
 			<Header />

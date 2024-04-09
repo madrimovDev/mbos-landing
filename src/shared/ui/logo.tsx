@@ -24,9 +24,9 @@ const LogoRenderFunction: ForwardRefRenderFunction<
 					priority
 					src="/images/mbos.png"
 					alt="MBOS"
-					width={100}
+					width={80}
 					height={45}
-					className="h-auto w-20 md:w-auto"
+					className="h-auto w-16 md:w-auto"
 				/>
 			</Link>
 		</>

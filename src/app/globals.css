@@ -38,3 +38,7 @@ body {
 		transform: rotate(0.5turn);
 	}
 }
+
+#welcome .swiper-pagination-progressbar-fill{
+	@apply bg-primary
+}

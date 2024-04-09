@@ -61,7 +61,7 @@ const employeesArray = [
 export default function employees() {
 	return (
 		<div
-			className="mt-[160px] px-4 container"
+			className="mt-[160px] px-4 container brightness-125 contrast-125"
 			id="employees"
 		>
 			<SectionTitle className="mb-16">Xodimlar</SectionTitle>
