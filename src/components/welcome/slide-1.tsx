@@ -14,7 +14,7 @@ interface Props {
 const imgs = ['/images/bg-1.jpg','/images/bg-2.jpg','/images/bg-3.jpg']
 export default function Slide1({ subtitle, title, img, animate, index }: Props) {
 	return (
-		<div className="w-full h-screen grid place-items-center mt-[-80px] bg-black">
+		<div className="w-full h-screen grid place-items-center mt-[-91px] md:mt-[-108px] bg-black">
 			<div className="container text-white relative z-10">
 				<motion.h1
 					animate={{
@@ -26,7 +26,7 @@ export default function Slide1({ subtitle, title, img, animate, index }: Props) 
 							type: "keyframe",
 						},
 					}}
-					className="text-center text-5xl md:text-6xl font-black text-white"
+					className="text-center text-4xl sm:text-5xl md:text-6xl font-black text-white"
 				>
 					<span className="text-primary">{title.mark}</span> {title.text}
 				</motion.h1>
