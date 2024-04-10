@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Project } from "./project-data";
 import { cn } from "@/shared/utils/cn";
 import useModalStore from "../core/contact-modal-store";
+import { Projects } from "@/dict/types";
 
 const MotionGrow = motion(Grow);
 
@@ -27,9 +28,11 @@ const aboutVariants: Variants = {
 export default function Mbos({
 	project,
 	dir,
+	contact,
 }: {
-	project: Project;
+	project: Projects["projects"][number];
 	dir: "left" | "right";
+	contact: Projects["contact"];
 }) {
 	const openModal = useModalStore((s) => s.openModal);
 
@@ -145,8 +148,8 @@ export default function Mbos({
 					</motion.div>
 				)}
 				<div className="flex items-center gap-4 mt-10">
-					<Button onClick={openModal}>Bog&apos;lanish</Button>
-				`</div>
+					<Button onClick={openModal}>{contact}</Button>`
+				</div>
 			</motion.div>
 		</MotionGrow>
 	);

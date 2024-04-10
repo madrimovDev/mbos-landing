@@ -4,6 +4,7 @@ import AboutInfo from "./about-info";
 import AboutMedia from "./about-media";
 import { Variants, motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import type { About } from "@/dict/types";
 
 const MotionContainer = motion(Container);
 
@@ -20,7 +21,11 @@ const aboutVariants: Variants = {
 	},
 };
 
-export default function About() {
+interface Props {
+	data: About
+}
+
+export default function About({data}: Props) {
 	const ref = useRef<HTMLDivElement>(null);
 	const isInView = useInView(ref, {
 		once: false,
@@ -39,7 +44,7 @@ export default function About() {
 			}}
 			className="mt-[80px] md:mt-[160px]"
 		>
-			<SectionTitle>Kompaniya Haqida</SectionTitle>
+			<SectionTitle>{data.sectionTitle}</SectionTitle>
 			<motion.div
 				variants={aboutVariants}
 				initial={'initial'}
@@ -47,7 +52,7 @@ export default function About() {
 				viewport={{ margin: "-150px", once: true }}
 				className="flex items-center flex-col gap-6 md:flex-row md:h-[50vh] mt-16 md:mt-24"
 			>
-				<AboutInfo />
+				<AboutInfo data={data} />
 				<AboutMedia />
 			</motion.div>
 		</MotionContainer>

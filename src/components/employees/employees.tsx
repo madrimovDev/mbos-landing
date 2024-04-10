@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import { SectionTitle } from "@/shared/ui";
+import { Employees } from "@/dict/types";
 
 const employeesArray = [
 	{
@@ -58,13 +59,17 @@ const employeesArray = [
 	},
 ];
 
-export default function employees() {
+interface Props {
+	data: Employees;
+}
+
+export default function employees({ data }: Props) {
 	return (
 		<div
 			className="mt-[160px] px-4 container brightness-125 contrast-125"
 			id="employees"
 		>
-			<SectionTitle className="mb-16">Xodimlar</SectionTitle>
+			<SectionTitle className="mb-16">{data.sectionTitle}</SectionTitle>
 			<Swiper
 				modules={[Navigation, A11y, Autoplay]}
 				spaceBetween={30}
@@ -90,7 +95,7 @@ export default function employees() {
 					},
 				}}
 			>
-				{employeesArray.map((item, index) => {
+				{data.employees.map((item, index) => {
 					return (
 						<SwiperSlide key={index}>
 							<div className="rounded-xl overflow-hidden">

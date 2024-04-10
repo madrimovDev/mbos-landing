@@ -3,6 +3,7 @@ import { Container, Grow } from "@/shared/ui";
 import HeaderMedia from "./header-media";
 import HeaderInfo from "./header-info";
 import { Variants, motion } from "framer-motion";
+import type { Header } from "@/dict/types";
 
 const headerVariants: Variants = {
 	initial: {},
@@ -16,7 +17,11 @@ const headerVariants: Variants = {
 
 const MotionContainer = motion(Container);
 
-export default function Header() {
+interface Props {
+	data: Header
+}
+
+export default function Header({data}: Props) {
 	return (
 		<motion.section
 			variants={headerVariants}
@@ -31,8 +36,8 @@ export default function Header() {
 				as="article"
 				className="flex flex-col md:flex-row justify-between items-center gap-10 md:gap-20 mt-10 md:mt-[120px]"
 			>
-				<HeaderInfo />
-				<HeaderMedia />
+				<HeaderInfo data={data} />
+				<HeaderMedia data={data} />
 			</MotionContainer>
 		</motion.section>
 	);

@@ -1,21 +1,24 @@
 import { Container, Grow, SectionTitle } from "@/shared/ui";
 import Map from "./map";
 import Form from "./form";
-
-export default function Contact() {
+import { ContactInfo } from "@/dict/types";
+interface Props {
+	data: ContactInfo
+}
+export default function Contact({data}: Props) {
 	return (
 		<Container
 			as="section"
 			id='contact'
 			className="mt-[80px] md:mt-[160px]"
 		>
-			<SectionTitle>Bog&apos;lanish</SectionTitle>
+			<SectionTitle>{data.sectionTitle}</SectionTitle>
 			<div className="flex flex-col md:flex-row gap-[50px] md:gap-[100px] mt-[70px]">
 				<Grow>
-					<Map />
+					<Map data={data.location} />
 				</Grow>
 				<Grow>
-					<Form />
+					<Form data={data} />
 				</Grow>
 			</div>
 		</Container>

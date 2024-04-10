@@ -1,10 +1,12 @@
 "use client";
+import type { Navbar } from "@/dict/types";
+import { useActiveKey } from "@/shared/hooks/useActiveKey";
 import { useMenu } from "@/shared/hooks/useMenu";
 import { Button, Container, Grow, Logo, Menu } from "@/shared/ui";
 import { cn } from "@/shared/utils/cn";
 import { Variants, motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 const navbarVariants: Variants = {
 	initial: {
@@ -17,9 +19,14 @@ const navbarVariants: Variants = {
 	},
 };
 
-export default function Navbar() {
+interface Props {
+	data: Navbar;
+}
+
+export default function Navbar({ data }: Props) {
 	const { ref, onToggle, open, onClose } = useMenu();
-	const router = useRouter()
+	const router = useRouter();
+	const params = useParams();
 	return (
 		<motion.div
 			variants={navbarVariants}
@@ -57,35 +64,34 @@ export default function Navbar() {
 						<Menu
 							gutter="gap-[30px] flex-col md:flex-row mt-20 md:mt-0"
 							onChangeHash={onClose}
-							items={[
-								{
-									href: "home",
-									title: "Bosh Sahifa",
-								},
-								{
-									href: "about",
-									title: "Kompaniya haqida",
-								},
-								{
-									href: "projects",
-									title: "Loyihalar",
-								},
-								{
-									href: "employees",
-									title: "Xodimlar",
-								},
-							]}
+							items={data.menu}
 						/>
 					</div>
 				</Grow>
-				<Grow className="flex justify-end items-center">
+				<Grow className="flex justify-end items-center gap-4">
 					<button
 						className="md:hidden"
 						onClick={onToggle}
 					>
 						<MenuIcon size="1.2em" />
 					</button>
-					<Button onClick={() => router.push('#contact')} className="hidden md:inline-block text-sm">Bog&apos;lanish</Button>
+					<select
+						defaultValue={params.lang}
+						onChange={(e) => {
+							router.push(`/${e.target.value}`);
+						}}
+						className="p-1 rounded-md bg-transparent"
+					>
+						<option value="uz">UZ</option>
+						<option value="ru">RU</option>
+						<option value="en">EN</option>
+					</select>
+					<Button
+						onClick={() => router.push("#contact")}
+						className="hidden md:inline-block text-sm"
+					>
+						{data.contact}
+					</Button>
 				</Grow>
 			</Container>
 		</motion.div>
