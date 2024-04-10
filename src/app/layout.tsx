@@ -61,6 +61,7 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	
 	return (
 		<html lang="uz">
 			<body className={`${inter.className} overflow-x-hidden`}>

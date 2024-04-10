@@ -1,19 +1,18 @@
+import type { Footer } from "@/dict/types";
 import { Icon } from "@/shared/icons";
 import { Container, Logo } from "@/shared/ui";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
-
-export default function Footer() {
+interface Props {
+	data: Footer;
+}
+export default function Footer({ data }: Props) {
 	return (
 		<section className="bg-gray-950 text-lightBlack mt-[100px]">
 			<Container className="py-20 grid md:grid-cols-4 gap-[50px] md:gap-[100px]">
 				<div>
 					<Logo href="/" />
-					<p className="text-xs leading-4 mt-5">
-						Ilovada ko&apos;plab sovrinli yangiliklar muntazam o&apos;tkazilib
-						turiladi.Undan tashqari ilova doimiy yangilashnida bo&apos;ladi, bu esa
-						foydalanuvchilarga ko&apos;plab qulayliklar yaratishga xizmat qiladi
-					</p>
+					<p className="text-xs leading-4 mt-5">{data.description}</p>
 					<div className="flex gap-4 my-5">
 						<Icon.Facebook className="fill-softBlack hover:fill-facebook transition-all" />
 						<Icon.Instagram className="fill-softBlack hover:fill-instagram transition-all" />
@@ -21,37 +20,23 @@ export default function Footer() {
 					</div>
 				</div>
 				<div>
-					<h3 className="font-bold text-white">Sayt Xaritasi</h3>
+					<h3 className="font-bold text-white">{data.siteMap.title}</h3>
 					<ul className="mt-5 space-y-1 text-sm font-medium">
-						<li>
-							<Link href="#home">Bosh Sahifa</Link>
-						</li>
-						<li>
-							<Link href="#projects">Loyihalar</Link>
-						</li>
-						<li>
-							<Link href="#">Hamkorlar</Link>
-						</li>
-						<li>
-							<Link href="#contact">Bog&apos;lanish</Link>
-						</li>
+						{data.siteMap.items.map((i) => (
+							<li key={i.href}>
+								<Link href={{ hash: i.href }}>{i.title}</Link>
+							</li>
+						))}
 					</ul>
 				</div>
 				<div>
-					<h3 className="font-bold text-white">Loyihalar</h3>
+					<h3 className="font-bold text-white">{data.projects.title}</h3>
 					<ul className="mt-5 space-y-1 text-sm font-medium">
-						<li>
-							<Link href="#mbos">Mbos - Online Navbar Olish</Link>
-						</li>
-						<li>
-							<Link href="#taskie">Taskie - Xodimarni Nazorat Qilish</Link>
-						</li>
-						<li>
-							<Link href="#">GPS - Kutuzov</Link>
-						</li>
-						<li>
-							<Link href="#">Elektron Navbat</Link>
-						</li>
+						{data.projects.items.map((i) => (
+							<li key={i.href}>
+								<Link href={{ hash: i.href }}>{i.title}</Link>
+							</li>
+						))}
 					</ul>
 				</div>
 				<div>
@@ -59,7 +44,7 @@ export default function Footer() {
 					<ul className="mt-5 space-y-1 text-sm font-medium">
 						<li>
 							<span className="flex items-start gap-2">
-								<MapPin  />
+								<MapPin />
 								Tinchlik ko&apos;chasi 6 a uy, Urganch, Xorazm&nbsp;Viloyati
 							</span>
 						</li>

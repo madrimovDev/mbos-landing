@@ -1,7 +1,9 @@
 import { MapPin } from "lucide-react";
 import Image from "next/image";
-
-export default function Map() {
+interface Props {
+	data: string
+}
+export default function Map({data}: Props) {
 	return (
 		<>
 			<figure>
@@ -17,8 +19,7 @@ export default function Map() {
 						className="text-red-600 "
 						size="1.3em"
 					/>
-					Tinchlik ko&apos;chasi 6 a uy, Urganch, Xorazm Viloyati,
-					O&apos;zbekiston
+					{data}
 				</figcaption>
 			</figure>
 		</>

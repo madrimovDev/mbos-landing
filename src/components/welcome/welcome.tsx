@@ -3,8 +3,9 @@ import { Autoplay, Pagination } from "swiper/modules";
 import Slide1 from "./slide-1";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import "swiper/css/pagination"
+import "swiper/css/pagination";
 import { useState } from "react";
+import type { Welcome } from "@/dict/types";
 
 const slidesData = [
 	{
@@ -32,7 +33,10 @@ const slidesData = [
 		subtitle: "Biz sizga qulaykilar yaratamiz",
 	},
 ];
-export default function Welcome() {
+interface Props {
+	data: Welcome;
+}
+export default function Welcome({ data }: Props) {
 	const [realIndex, setRealIndex] = useState(0);
 	return (
 		<div className="">
@@ -40,17 +44,17 @@ export default function Welcome() {
 				id="welcome"
 				autoplay={{
 					delay: 1000,
-          disableOnInteraction: false,
+					disableOnInteraction: false,
 				}}
 				onSlideChange={(e) => setRealIndex(e.realIndex)}
 				modules={[Autoplay, Pagination]}
 				pagination={{
-					type: 'progressbar'
+					type: "progressbar",
 				}}
 				speed={2000}
 				loop
 			>
-				{slidesData.map((i, index) => {
+				{data.slidesData.map((i, index) => {
 					return (
 						<SwiperSlide key={index}>
 							<Slide1

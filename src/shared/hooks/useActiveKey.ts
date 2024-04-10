@@ -8,7 +8,6 @@ export const useActiveKey = (defaultActiveKey?: string) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
 			const hash = window.location.hash;
-			console.log(hash)
       changeActiveKey(hash ? hash.substring(1) : defaultActiveKey || "");
     }
   }, [defaultActiveKey]);
