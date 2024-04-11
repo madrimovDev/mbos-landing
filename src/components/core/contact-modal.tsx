@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { X } from "lucide-react";
 import useKeyDown from "@/shared/hooks/useKeyDown";
 import { Button } from "@/shared/ui";
+import { useForm } from "@/shared/hooks/useForm";
 
 const wrapperVariant: Variants = {
 	initial: {
@@ -51,9 +52,33 @@ const modalVariants: Variants = {
 };
 
 export default function ContactModal() {
-	const { isOpen, closeModal } = useModalStore();
+	const { isOpen, closeModal, getLink, target } = useModalStore();
 	const modalRef = useRef<HTMLDivElement>(null);
+	const { submitHandler } = useForm();
 	useKeyDown("Escape", closeModal);
+
+	const onSubmit = (data: any) => {
+		const link = getLink(target);
+		if (link) {
+			const url = new URL(link?.link, "https://lead.mbos.uz");
+			const searchs = Object.fromEntries(url.searchParams.entries());
+			const l = Object.keys(searchs)
+				.map((key) => `${key}=${searchs[key]}`)
+				.join("&");
+
+			fetch(`https://lead.mbos.uz/api/v1/lead?${l}`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					full_name: data.full_name,
+					phone: data.phone,
+					description: data.message,
+				}),
+			});
+		}
+	};
 
 	return (
 		<AnimatePresence mode="wait">
@@ -91,7 +116,10 @@ export default function ContactModal() {
 									Bizni tanlaganingiz uchun rahmat
 								</div>
 							</blockquote>
-							<form className="space-y-4 ">
+							<form
+								className="space-y-4 "
+								onSubmit={submitHandler(onSubmit)}
+							>
 								<div>
 									<input
 										type="text"

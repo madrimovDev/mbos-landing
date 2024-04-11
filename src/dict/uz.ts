@@ -83,6 +83,7 @@ const data: Data = {
 		projects: [
 			{
 				name: "MBOS - Online Navbar Xizmati",
+				type: 'mbos',
 				descriptions: [
 					"- Hozirgi kunda eng ko’p navbatlar kuzatilib turgan Meditsinada, Klinikalarda, Metanlarda, Avto moykalarda borib kutib o’tirishi mumkun bo’lgan joylarni hammasiga navbatlarni tizimlashtirib qo’yib beramiz.",
 					"- Online navbat olib o’z vaqtida ishini hal qilib keladi.Undan tashqari yoz oylarida Metanlardan va Moykalardan Cashbacklar ham beriladi. Cashbacklarni yig’ib turib ham foydalansa bo’ladi.",
@@ -126,6 +127,7 @@ const data: Data = {
 			},
 			{
 				name: "Taskie - Korxonaning ish faoliyatini avtomatlashtirish",
+				type: 'taskie',
 				descriptions: [
 					"- Taskie dasturi Hodimlarni  kelib ketishi asosan  vaqtida kelishi,  topshiriqlar online elektron beriladi dedline vaqtida o’zi hodimlarni  topshiriqlarini kechiktirmasdan  so’rab oladi",
 					"- Hodimlarni ish vaqtida qayerda yurganini lokatsiya orqali teshkirib tursa ham bo’lad",
@@ -163,6 +165,7 @@ const data: Data = {
 			},
 			{
 				name: "MBOS GPS",
+				type: 'gps',
 				imgs: [
 					{
 						src: "/images/gps-tracking.jpg",
@@ -186,14 +189,14 @@ const data: Data = {
 				title: "Veb Saytlar",
 				description:
 					"Internet orqali elektronik sharoitda joylashgan, maqsadli ma'lumotlar va xizmatlarni taqdim etuvchi virtual platforma.",
-				type: "web", // enum
+				type: "website", // enum
 				trigger: "web-site", //enum
 			},
 			{
 				title: "Online Dokonlar",
 				description:
 					"Internet orqali mahsulot sotish va etkazib berish xizmatlari. Tez va qulaylik, xavfsizlik va yetkazib berish samaradorligi.",
-				type: "e-commerce", //enum
+				type: "e-com", //enum
 				trigger: "e-commerce",
 			},
 			{

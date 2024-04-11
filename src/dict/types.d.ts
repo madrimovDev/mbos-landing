@@ -1,3 +1,5 @@
+import { ModalState } from "@/components/core/contact-modal-store";
+
 export interface MenuItem {
 	href: string;
 	title: string;
@@ -41,6 +43,7 @@ export interface Project {
 	imgs?: { src: string; alt: string; width: number; height: number }[];
 	stats?: { value: string; name: string }[];
 	downloadLinks?: { href: string; name: string; img: string }[];
+	type: ModalState['target']
 }
 
 export interface Projects {
@@ -52,7 +55,7 @@ export interface Projects {
 export interface Service {
 	title: string;
 	description: string;
-	type: "web" | "e-commerce" | "crm" | "bot";
+	type: ModalState['target'];
 	trigger: "web-site" | "e-commerce" | "crm" | "tg-bot";
 }
 

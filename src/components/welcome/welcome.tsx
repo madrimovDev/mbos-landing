@@ -43,7 +43,7 @@ export default function Welcome({ data }: Props) {
 			<Swiper
 				id="welcome"
 				autoplay={{
-					delay: 1000,
+					delay: 4000,
 					disableOnInteraction: false,
 				}}
 				onSlideChange={(e) => setRealIndex(e.realIndex)}

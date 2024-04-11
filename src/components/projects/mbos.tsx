@@ -148,7 +148,7 @@ export default function Mbos({
 					</motion.div>
 				)}
 				<div className="flex items-center gap-4 mt-10">
-					<Button onClick={openModal}>{contact}</Button>`
+					<Button onClick={() => openModal(project.type)}>{contact}</Button>`
 				</div>
 			</motion.div>
 		</MotionGrow>
