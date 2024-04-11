@@ -1,10 +1,10 @@
-import type { Footer } from "@/dict/types";
+import type { CoreData, Footer } from "@/dict/types";
 import { Icon } from "@/shared/icons";
 import { Container, Logo } from "@/shared/ui";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 interface Props {
-	data: Footer;
+	data: Footer & CoreData;
 }
 export default function Footer({ data }: Props) {
 	return (
@@ -14,9 +14,24 @@ export default function Footer({ data }: Props) {
 					<Logo href="/" />
 					<p className="text-xs leading-4 mt-5">{data.description}</p>
 					<div className="flex gap-4 my-5">
-						<Icon.Facebook className="fill-softBlack hover:fill-facebook transition-all" />
-						<Icon.Instagram className="fill-softBlack hover:fill-instagram transition-all" />
-						<Icon.Telegram className="fill-softBlack hover:fill-telegram transition-all" />
+						<a
+							href={data.facebook}
+							target="_blank"
+						>
+							<Icon.Facebook className="fill-softBlack hover:fill-facebook transition-all" />
+						</a>
+						<a
+							href={data.instagram}
+							target="_blank"
+						>
+							<Icon.Instagram className="fill-softBlack hover:fill-instagram transition-all" />
+						</a>
+						<a
+							href={data.telegram}
+							target="_blank"
+						>
+							<Icon.Telegram className="fill-softBlack hover:fill-telegram transition-all" />
+						</a>
 					</div>
 				</div>
 				<div>
@@ -45,27 +60,20 @@ export default function Footer({ data }: Props) {
 						<li>
 							<span className="flex items-start gap-2">
 								<MapPin />
-								Tinchlik ko&apos;chasi 6 a uy, Urganch, Xorazm&nbsp;Viloyati
+								{data.location}
 							</span>
 						</li>
-						<li>
-							<a
-								href="tel:+998914245014"
-								className="flex items-center gap-2"
-							>
-								<Phone size="1.2em" />
-								+998914245014
-							</a>
-						</li>
-						<li>
-							<Link
-								href="#"
-								className="flex items-center gap-2"
-							>
-								<Mail size="1.2em" />
-								example@mail.co
-							</Link>
-						</li>
+						{data.phone.map((p) => (
+							<li key={p}>
+								<a
+									href={`tel:${p}`}
+									className="flex items-center gap-2"
+								>
+									<Phone size="1.2em" />
+									{p}
+								</a>
+							</li>
+						))}
 					</ul>
 				</div>
 			</Container>

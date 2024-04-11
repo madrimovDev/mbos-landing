@@ -76,7 +76,7 @@ export interface Employees {
 export interface ContactInfo {
 	sectionTitle: string;
 	name: string;
-	phone: string;
+	phonePlaceholder: string;
 	message: string;
 	send: string;
 	location: string;
@@ -100,7 +100,7 @@ export interface Footer {
 
 export interface CoreData {
 	location: string;
-	phone: string;
+	phone: string[];
 	email: string;
 	telegram: string;
 	instagram: string;

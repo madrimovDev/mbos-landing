@@ -1,7 +1,7 @@
 import { Icon } from "@/shared/icons";
 import { Grow } from "@/shared/ui";
 import { Variants, motion } from "framer-motion";
-import { About } from "@/dict/types";
+import { About, CoreData } from "@/dict/types";
 
 const MotionGrow = motion(Grow);
 const aboutVariants: Variants = {
@@ -20,7 +20,7 @@ const aboutVariants: Variants = {
 };
 
 interface Props {
-	data: About;
+	data: About & CoreData;
 }
 
 export default function AboutInfo({ data }: Props) {
@@ -57,9 +57,21 @@ export default function AboutInfo({ data }: Props) {
 				variants={aboutVariants}
 				className="flex gap-6 my-6"
 			>
-				<Icon.Facebook className="fill-softBlack hover:fill-facebook transition-all" />
-				<Icon.Instagram className="fill-softBlack hover:fill-instagram transition-all" />
-				<Icon.Telegram className="fill-softBlack hover:fill-telegram transition-all" />
+				<a
+					href={data.facebook}
+					target="_blank"
+				>
+					<Icon.Facebook className="fill-softBlack hover:fill-facebook transition-all" />
+				</a>
+				<a
+					href={data.instagram}
+					target="_blank"
+				>
+					<Icon.Instagram className="fill-softBlack hover:fill-instagram transition-all" />
+				</a>
+				<a href={data.telegram}>
+					<Icon.Telegram className="fill-softBlack hover:fill-telegram transition-all" />
+				</a>
 			</motion.div>
 		</MotionGrow>
 	);

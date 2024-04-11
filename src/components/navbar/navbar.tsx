@@ -1,12 +1,11 @@
 "use client";
 import type { Navbar } from "@/dict/types";
-import { useActiveKey } from "@/shared/hooks/useActiveKey";
 import { useMenu } from "@/shared/hooks/useMenu";
 import { Button, Container, Grow, Logo, Menu } from "@/shared/ui";
 import { cn } from "@/shared/utils/cn";
 import { Variants, motion } from "framer-motion";
 import { MenuIcon, X } from "lucide-react";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const navbarVariants: Variants = {
 	initial: {
