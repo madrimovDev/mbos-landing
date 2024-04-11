@@ -1,9 +1,9 @@
 import { Container, Grow, SectionTitle } from "@/shared/ui";
 import Map from "./map";
 import Form from "./form";
-import { ContactInfo } from "@/dict/types";
+import { ContactInfo, CoreData } from "@/dict/types";
 interface Props {
-	data: ContactInfo
+	data: ContactInfo & CoreData
 }
 export default function Contact({data}: Props) {
 	return (

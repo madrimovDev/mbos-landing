@@ -1,33 +1,43 @@
+import { CoreData } from "@/dict/types";
 import { Icon } from "@/shared/icons";
-
-export default function Top() {
+interface Props {
+	data: CoreData;
+}
+export default function Top({ data }: Props) {
 	return (
 		<div className="bg-blue-500 text-white">
 			<div className="container py-1 text-xs md:text-sm flex justify-between items-center">
 				<span>
-					<b>+99 891 123 45 67</b>
+					{data.phone.map((p) => (
+						<b
+							className="block md:inline-block md:mr-4"
+							key={p}
+						>
+							{p}
+						</b>
+					))}
 				</span>
 				<ul className="fill-white flex gap-2 scale-75 -mr-4">
 					<li>
 						<a
-							href=""
-							className=""
+							href={data.facebook}
+							target="_blank"
 						>
 							{<Icon.Facebook />}
 						</a>
 					</li>
 					<li>
 						<a
-							href=""
-							className=""
+							href={data.instagram}
+							target="_blank"
 						>
 							{<Icon.Instagram />}
 						</a>
 					</li>
 					<li>
 						<a
-							href=""
-							className=""
+							href={data.telegram}
+							target="_blank"
 						>
 							{<Icon.Telegram />}
 						</a>

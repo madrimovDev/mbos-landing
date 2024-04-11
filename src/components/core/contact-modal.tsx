@@ -3,7 +3,6 @@
 import useModalStore from "./contact-modal-store";
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import { useRef } from "react";
-import useOutsideClick from "@/shared/hooks/useOutsideClick";
 import { X } from "lucide-react";
 import useKeyDown from "@/shared/hooks/useKeyDown";
 import { Button } from "@/shared/ui";
@@ -32,38 +31,38 @@ const wrapperVariant: Variants = {
 };
 
 const modalVariants: Variants = {
-  initial: {
-    opacity: 0,
-    y: -20,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-  },
-  exit: {
-    opacity: 0,
-    y: -20,
-    scaleY: 0.8,
-    originY: 'top',
-    transition: {
-      duration: 0.1
-    }
-  }
-}
+	initial: {
+		opacity: 0,
+		y: -20,
+	},
+	animate: {
+		opacity: 1,
+		y: 0,
+	},
+	exit: {
+		opacity: 0,
+		y: -20,
+		scaleY: 0.8,
+		originY: "top",
+		transition: {
+			duration: 0.1,
+		},
+	},
+};
 
 export default function ContactModal() {
 	const { isOpen, closeModal } = useModalStore();
 	const modalRef = useRef<HTMLDivElement>(null);
-	useOutsideClick(closeModal, modalRef);
 	useKeyDown("Escape", closeModal);
+
 	return (
 		<AnimatePresence mode="wait">
 			{isOpen && (
-        <motion.div
-          variants={wrapperVariant}
-					initial='initial'
-					animate='animate'
-					exit='exit'
+				<motion.div
+					variants={wrapperVariant}
+					initial="initial"
+					animate="animate"
+					exit="exit"
 					className="fixed inset-0 px-4 backdrop-blur-sm z-50 bg-black/40 flex justify-center items-center pt-10"
 				>
 					<motion.div

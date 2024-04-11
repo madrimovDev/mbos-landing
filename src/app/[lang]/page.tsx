@@ -1,6 +1,8 @@
 import { Footer, Top } from "@/components";
+import ContactModal from "@/components/core/contact-modal";
 import Loading from "@/components/core/loading";
 import { t } from "@/dict";
+import { mergeObject } from "@/shared/utils/mergeObject";
 import { Suspense, lazy } from "react";
 
 const Navbar = lazy(() => import("@/components/navbar/navbar"));
@@ -16,16 +18,17 @@ export default function Home(props: { params: { lang: "en" | "ru" | "uz" } }) {
 	const data = t(props.params.lang);
 	return (
 		<Suspense fallback={<Loading />}>
-			<Top />
+			<Top data={data.coreData} />
 			<Navbar data={data.navbar} />
 			<Welcome data={data.welcome} />
 			<Header data={data.header} />
-			<About data={data.about} />
+			<About data={mergeObject(data.about, data.coreData)} />
 			<Projects data={data.projects} />
 			<Services data={data.services} />
 			<Employees data={data.employees} />
-			<Contact data={data.contact} />
-			<Footer data={data.footer} />
+			<Contact data={mergeObject(data.contact, data.coreData)} />
+			<Footer data={mergeObject(data.footer, data.coreData)} />
+			<ContactModal />
 		</Suspense>
 	);
 }

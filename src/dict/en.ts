@@ -268,7 +268,7 @@ const data: Data = {
 	contact: {
 		sectionTitle: "Contact",
 		name: "Full Name",
-		phone: "Phone",
+		phonePlaceholder: "Phone",
 		message: "Message",
 		send: "Send",
 		location: "Tinchlik Street, House 6a, Urgench, Khorezm Region, Uzbekistan",
@@ -321,12 +321,13 @@ const data: Data = {
 	},
 	coreData: {
 		location: "Tinchlik Street, House 6a, Urgench, Khorezm Region, Uzbekistan",
-		phone: "+998914245014",
+		phone: ["+998 71 200 11 51", "+998 62 227 76 76"],
 		email: "example@mail.co",
-		telegram: "https://t.me/mbos_online",
-		instagram: "https://instagram.com/mbos_online",
-		facebook: "https://fb.com/mbos_online",
+		telegram: "https://t.me/mbosuzb",
+		instagram: "https://instagram.com/mbosuzb",
+		facebook: "https://fb.com/mbosuzb",
 	},
 };
 
 export default data;
+

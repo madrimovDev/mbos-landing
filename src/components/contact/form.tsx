@@ -1,5 +1,5 @@
 "use client";
-import { ContactInfo } from "@/dict/types";
+import { ContactInfo, CoreData } from "@/dict/types";
 import { useForm } from "@/shared/hooks/useForm";
 import { Button } from "@/shared/ui";
 import { Mail, Phone, Send } from "lucide-react";
@@ -10,7 +10,7 @@ interface FormData {
 	message: string;
 }
 interface Props {
-	data: ContactInfo;
+	data: ContactInfo & CoreData;
 }
 export default function Form({ data }: Props) {
 	const { submitHandler } = useForm();
@@ -33,7 +33,7 @@ export default function Form({ data }: Props) {
 			/>
 			<input
 				className="p-5 rounded-full border text-sm font-bold text-softBlack"
-				placeholder={data.phone}
+				placeholder={data.phonePlaceholder}
 				required
 				name="phone"
 				type="tel"
@@ -51,26 +51,22 @@ export default function Form({ data }: Props) {
 			></textarea>
 			<Button>{data.send}</Button>
 			<div className="flex items-center flex-wrap justify-center gap-4 text-softBlack text-sm">
-				<a
-					className="flex gap-2 items-center"
-					href="tel:+998914245014"
-				>
-					<Phone size="1.4em" />
-					+998914245014
-				</a>
-				<a
-					className="flex gap-2 items-center"
-					href="mailto:example@gmail.com"
-				>
-					<Mail size="1.4em" />
-					example@gmail.com
-				</a>
+				{data.phone.map((p) => (
+					<a
+						key={p}
+						className="flex gap-2 items-center"
+						href={`tel:${p}`}
+					>
+						<Phone size="1.4em" />
+						{p}
+					</a>
+				))}
 				<a
 					className="flex gap-2 items-center"
 					href="http://t.me/mbos_official"
 				>
 					<Send size="1.4em" />
-					@mbos_official
+					@{data.telegram.split('/').at(-1)}
 				</a>
 			</div>
 		</form>

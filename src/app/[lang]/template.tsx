@@ -1,9 +1,6 @@
 "use client";
-import ContactModal from "@/components/core/contact-modal";
-import Test from "@/components/test/test";
 import { motion, Variants } from "framer-motion";
-import Script from "next/script";
-import { PropsWithChildren, useLayoutEffect } from "react";
+import { PropsWithChildren } from "react";
 
 const templateVariant: Variants = {
 	initial: {},
@@ -23,8 +20,6 @@ export default function Template({ children }: PropsWithChildren) {
 			animate="animate"
 		>
 			{children}
-			<ContactModal />
-			{/* <Test /> */}
 		</motion.div>
 	);
 }

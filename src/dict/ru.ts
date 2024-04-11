@@ -268,7 +268,7 @@ const data: Data = {
 	contact: {
 		sectionTitle: "Контакты",
 		name: "Имя Фамилия",
-		phone: "Телефон",
+		phonePlaceholder: "Телефон",
 		message: "Сообщение",
 		send: "Отправить",
 		location: "Улица Тинчлик, дом 6а, Ургенч, Хорезмская область, Узбекистан",
@@ -321,11 +321,11 @@ const data: Data = {
 	},
 	coreData: {
 		location: "Улица Тинчлик, дом 6а, Ургенч, Хорезмская область, Узбекистан",
-		phone: '+998914245014',
-		email: 'example@mail.co',
-		telegram: 'https://t.me/mbos_online',
-		instagram: 'https://instagram.com/mbos_online',
-		facebook: 'https://fb.com/mbos_online',
+		phone: ["+998 71 200 11 51", "+998 62 227 76 76"],
+		email: "example@mail.co",
+		telegram: "https://t.me/mbosuzb",
+		instagram: "https://instagram.com/mbosuzb",
+		facebook: "https://fb.com/mbosuzb",
 	},
 };
 export default data

@@ -74,7 +74,7 @@ const data: Data = {
 		title: "MBOS",
 		subtitle: "Multi Branch Online Service",
 		descriptions: [
-			"Kompaniya 2020 - yil fevral oyida Yusupov Mansur,Sahobiddinov Dilshod va Sobirov Zafarbek tomonidanMbos startup loyihasi ishlab chiqish bilan boshlangan va kompaniya nomi ham Mbos deb nomlangan.",
+			"Kompaniya 2020 - yil fevral oyida Yusupov Mansur, Sahabutdinov Dilshod va Sobirov Zafarbek tomonidan Mbos startup loyihasi ishlab chiqish bilan boshlangan va kompaniya nomi ham Mbos deb nomlangan.",
 			'Prezidentimizning 2020-yil 28-apreldagi "Raqamli iqtisodiyot va elektron hukumatni keng joriy etish chora-tadbirlari to`g`risida" gi qarorining ijrosini ta`minlash maqsadida boshqa sohalarda ham, jumladan korxona tashkilotlarning boshqaruvidagi tizimlarni ishlab chiqish undan tashqari veb saytlar, mobil dasturlar ishlab chiqish bilan shug`ullanadi',
 		],
 	},
@@ -127,7 +127,7 @@ const data: Data = {
 			{
 				name: "Taskie - Korxonaning ish faoliyatini avtomatlashtirish",
 				descriptions: [
-					"- Taskie dasturi Hodimlarni  kelib ketishi asosan  vaqtida kelishi,  tapshiriqlar online elektron beriladi dedline vaqtida o’zi hodimlarni  topshiriqlarini kechiktirmasdan  so’rab oladi",
+					"- Taskie dasturi Hodimlarni  kelib ketishi asosan  vaqtida kelishi,  topshiriqlar online elektron beriladi dedline vaqtida o’zi hodimlarni  topshiriqlarini kechiktirmasdan  so’rab oladi",
 					"- Hodimlarni ish vaqtida qayerda yurganini lokatsiya orqali teshkirib tursa ham bo’lad",
 				],
 				imgs: [
@@ -173,7 +173,7 @@ const data: Data = {
 				],
 				descriptions: [
 					"GPS ni  biznes egalari, tadbirkorlar o'z ish faoliyatlariga tadbiq qilishlari mumkin.",
-					"Mashinalar qayerdaligi, qancha yoqilg'i sarf qilgani, qancha masofa bosib o'tgani, qancha tezlikda harakatlangani, undan tashqari muzlatgichli mashinalar bo'lsa gradusni o'lchab borish imkoniyatlari mavjud. Chet elga chiqadigan mashinalarga ham o'rnatish mumkin",
+					"Mashinalar qayerdaligi, qancha yoqilg'i sarf qilgani, qancha masofa bosib o'tgani, qancha tezlikda harakatlangani, undan tashqari muzlatgichli mashinalar bo'lsa issiq va sovuh havo haroratini o'lchab borish imkoniyatlari mavjud. Chet elga chiqadigan mashinalarga ham o'rnatish mumkin",
 				],
 			},
 		],
@@ -268,7 +268,7 @@ const data: Data = {
 	contact: {
 		sectionTitle: "Bog'lanish",
 		name: "Ism Familiya",
-		phone: "Telefon",
+		phonePlaceholder: "Telefon",
 		message: "Xabar",
 		send: "Yuborish",
 		location: "Tinchlik ko'chasi 6 a uy, Urganch, Xorazm Viloyati, O'zbekiston",
@@ -295,38 +295,39 @@ const data: Data = {
 					href: "employees",
 					title: "Xodimlar",
 				},
-			]
+			],
 		},
 		projects: {
-			title: 'Loyihalar',
+			title: "Loyihalar",
 			items: [
 				{
-					href: '#mbos',
-					title: 'Mbos - Online Navbat Olish',
+					href: "#mbos",
+					title: "Mbos - Online Navbat Olish",
 				},
 				{
-					href: '#taskie',
-					title: 'Taskie - Xodimlarni Nazorat qilish',
+					href: "#taskie",
+					title: "Taskie - Xodimlarni Nazorat qilish",
 				},
 				{
-					href: '#gps',
-					title: 'Kuzatuv',
+					href: "#gps",
+					title: "Kuzatuv",
 				},
 				{
-					href: '#mbos',
-					title: 'Elektron Navbat',
+					href: "#mbos",
+					title: "Elektron Navbat",
 				},
-			]
-		}
+			],
+		},
 	},
 	coreData: {
 		location: "Tinchlik ko'chasi 6 a uy, Urganch, Xorazm Viloyati, O'zbekiston",
-		phone: '+998914245014',
-		email: 'example@mail.co',
-		telegram: 'https://t.me/mbos_online',
-		instagram: 'https://instagram.com/mbos_online',
-		facebook: 'https://fb.com/mbos_online',
-	}
+		phone: ["+998 71 200 11 51", "+998 62 227 76 76"],
+		email: "example@mail.co",
+		telegram: "https://t.me/mbosuzb",
+		instagram: "https://instagram.com/mbosuzb",
+		facebook: "https://fb.com/mbosuzb",
+	},
 };
 
-export default data
+export default data;
+
