@@ -7,7 +7,7 @@ const MotionGrow = motion(Grow);
 
 const headerInfoVariants: Variants = {
 	initial: {
-		scale: 0.5,
+		scale: 0,
 		opacity: 0,
 	},
 	animate: {

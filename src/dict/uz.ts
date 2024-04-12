@@ -16,6 +16,10 @@ const data: Data = {
 				title: "Loyihalar",
 			},
 			{
+				href: "services",
+				title: "Xizmatlar",
+			},
+			{
 				href: "employees",
 				title: "Xodimlar",
 			},
@@ -82,11 +86,11 @@ const data: Data = {
 		sectionTitle: "Loyihalar",
 		projects: [
 			{
-				name: "MBOS - Online Navbar Xizmati",
+				name: "MBOS - Online Navbat Xizmati",
 				type: 'mbos',
 				descriptions: [
-					"- Hozirgi kunda eng ko’p navbatlar kuzatilib turgan Meditsinada, Klinikalarda, Metanlarda, Avto moykalarda borib kutib o’tirishi mumkun bo’lgan joylarni hammasiga navbatlarni tizimlashtirib qo’yib beramiz.",
-					"- Online navbat olib o’z vaqtida ishini hal qilib keladi.Undan tashqari yoz oylarida Metanlardan va Moykalardan Cashbacklar ham beriladi. Cashbacklarni yig’ib turib ham foydalansa bo’ladi.",
+					"- Hozirgi kunda eng ko’p navbatlar kuzatilib turgan Tibbiyot sohasida, Klinikalarda, Bank, Avtosalon, Avtomoyka, Gaz to’ldirish shaxobchalarida navbat kutish jamoat tashkilotlarida mijozlar vaqtini ishchi xodimlar ish samaradorligini oshirishda yechim yaratib innovatsion onlayn va offlayn tarzda navbatlarni tizimlashtirib beramiz.",
+					"- Onlayn navbat olib o’z vaqtida kelib ishini hal qilib keladi.Undan tashqari yoz oylarida Gaz to’ldirish shaxobchalaridan va Avto moykalardan Cashbacklar ham beriladi. Cashbacklarni to’plab Mbos platforma xizmatlaridan bepul foydalaning.",
 				],
 				imgs: [
 					{
@@ -129,8 +133,9 @@ const data: Data = {
 				name: "Taskie - Korxonaning ish faoliyatini avtomatlashtirish",
 				type: 'taskie',
 				descriptions: [
-					"- Taskie dasturi Hodimlarni  kelib ketishi asosan  vaqtida kelishi,  topshiriqlar online elektron beriladi dedline vaqtida o’zi hodimlarni  topshiriqlarini kechiktirmasdan  so’rab oladi",
-					"- Hodimlarni ish vaqtida qayerda yurganini lokatsiya orqali teshkirib tursa ham bo’lad",
+					"- Taskie dasturi Hodimlarni kelib ketishi asosan vaqtida kelishi, topshiriqlar online elektron beriladi dedline vaqtida o’zi hodimlarni topshiriqlarini kechiktirmasdan ma'lumot oladi",
+					"- Hodimlarni ish vaqtida qayerda yurganini lokatsiya orqali teshkirib tursa ham bo’ladi",
+					"- Hodimlarni ish vaqtida qayerda ekanligini xamda lokatsiya tizimi orqali teshkirish imkoni mavjud"
 				],
 				imgs: [
 					{
@@ -162,6 +167,12 @@ const data: Data = {
 						img: "/",
 					},
 				],
+				addonLinks: [
+					{
+						name: "Demo versiyani sinab ko'ring",
+						link: ''
+					}
+				]
 			},
 			{
 				name: "MBOS GPS",
@@ -189,8 +200,8 @@ const data: Data = {
 				title: "Veb Saytlar",
 				description:
 					"Internet orqali elektronik sharoitda joylashgan, maqsadli ma'lumotlar va xizmatlarni taqdim etuvchi virtual platforma.",
-				type: "website", // enum
-				trigger: "web-site", //enum
+				type: "website",
+				trigger: "web-site",
 			},
 			{
 				title: "Online Dokonlar",
@@ -330,6 +341,19 @@ const data: Data = {
 		instagram: "https://instagram.com/mbosuzb",
 		facebook: "https://fb.com/mbosuzb",
 	},
+	modalData: {
+		notification: {
+			marked: 'Bizni tanlaganingiz uchun rahmat',
+			contact: (phone: string[]) => `To'g'ridan to'g'ri biz bilan bo'g'lanish uchun ${phone.join(' yoki ')} raqamiga qo'ng'iroq qilishingiz mumkin`,
+			message: "Xabaringiz yuborilgandan so'ng tez orada siz bilan bog'lanamiz."
+		},
+		namePlaceholder: 'Ismingizni kiriting',
+		phonePlaceholder: 'Telefon raqamingizni kiriting',
+		phoneExample: 'Na`muna: +99891 123 45 67',
+		messagePlaceholder: 'Murojaat mazmunini kiriting',
+		sendMessage: 'Xabarni yuborish',
+		successMessage: 'Xabaringiz yuborildi'
+	}
 };
 
 export default data;

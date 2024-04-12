@@ -82,11 +82,11 @@ export default function Mbos({
 					once: true,
 					margin: "-100px",
 				}}
-				className="flex-grow w-full"
+				className="flex-grow w-full flex flex-col gap-4"
 			>
 				<motion.h3
 					variants={aboutVariants}
-					className="text-3xl font-bold mb-4"
+					className="text-3xl font-bold mb-2"
 				>
 					{project.name}
 				</motion.h3>
@@ -94,14 +94,14 @@ export default function Mbos({
 					<motion.p
 						key={desc}
 						variants={aboutVariants}
-						className="text-lightBlack leading-8 my-2"
+						className="text-lightBlack leading-8"
 					>
 						{desc}
 					</motion.p>
 				))}
 				<motion.div
 					variants={aboutVariants}
-					className="flex gap-10"
+					className="flex gap-10 mt-4"
 				>
 					{project.stats?.map((stat) => (
 						<motion.div
@@ -126,7 +126,7 @@ export default function Mbos({
 				{project.downloadLinks && (
 					<motion.div
 						variants={aboutVariants}
-						className="flex gap-4 mt-8 items-stretch"
+						className="flex gap-4 items-stretch my-4"
 					>
 						{project.downloadLinks?.map((link) => (
 							<Link
@@ -147,8 +147,13 @@ export default function Mbos({
 						))}
 					</motion.div>
 				)}
-				<div className="flex items-center gap-4 mt-10">
-					<Button onClick={() => openModal(project.type)}>{contact}</Button>`
+				<div className="flex items-center gap-4">
+					<Button onClick={() => openModal(project.type)}>{contact}</Button>
+					{
+						project.addonLinks && project.addonLinks.map(l => {
+							return <a href={l.link} key={l.name}>{l.name}</a>
+						})
+					}
 				</div>
 			</motion.div>
 		</MotionGrow>

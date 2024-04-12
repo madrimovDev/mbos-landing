@@ -43,7 +43,8 @@ export interface Project {
 	imgs?: { src: string; alt: string; width: number; height: number }[];
 	stats?: { value: string; name: string }[];
 	downloadLinks?: { href: string; name: string; img: string }[];
-	type: ModalState['target']
+	type: ModalState['target'],
+	addonLinks?: {name: string, link: string}[]
 }
 
 export interface Projects {
@@ -110,6 +111,20 @@ export interface CoreData {
 	facebook: string;
 }
 
+interface ModalData {
+	notification: {
+			marked: string,
+			contact: (phone: string[]) => string
+			message: string
+	},
+	namePlaceholder: string,
+	phonePlaceholder: string
+	phoneExample: string
+	messagePlaceholder: string
+	successMessage: string
+	sendMessage: string
+}
+
 export interface Data {
 	navbar: Navbar;
 	welcome: Welcome;
@@ -121,5 +136,6 @@ export interface Data {
 	contact: ContactInfo;
 	footer: Footer;
 	coreData: CoreData;
+	modalData: ModalData
 }
 

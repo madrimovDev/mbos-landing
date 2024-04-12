@@ -3,21 +3,26 @@ import ContactModal from "@/components/core/contact-modal";
 import Loading from "@/components/core/loading";
 import { t } from "@/dict";
 import { mergeObject } from "@/shared/utils/mergeObject";
-import { Suspense, lazy } from "react";
+import dynamic from "next/dynamic";
 
-const Navbar = lazy(() => import("@/components/navbar/navbar"));
-const Header = lazy(() => import("@/components/header/header"));
-const About = lazy(() => import("@/components/about/about"));
-const Projects = lazy(() => import("@/components/projects/projects"));
-const Employees = lazy(() => import("@/components/employees/employees"));
-const Contact = lazy(() => import("@/components/contact/contact"));
-const Services = lazy(() => import("@/components/services/services"));
-const Welcome = lazy(() => import("@/components/welcome/welcome"));
+const Navbar = dynamic(() => import("@/components/navbar/navbar"), {
+	ssr: false,
+	loading() {
+		return <Loading />;
+	},
+});
+const Header = dynamic(() => import("@/components/header/header"));
+const About = dynamic(() => import("@/components/about/about"));
+const Projects = dynamic(() => import("@/components/projects/projects"));
+const Employees = dynamic(() => import("@/components/employees/employees"));
+const Contact = dynamic(() => import("@/components/contact/contact"));
+const Services = dynamic(() => import("@/components/services/services"));
+const Welcome = dynamic(() => import("@/components/welcome/welcome"));
 
 export default function Home(props: { params: { lang: "en" | "ru" | "uz" } }) {
 	const data = t(props.params.lang);
 	return (
-		<Suspense fallback={<Loading />}>
+		<>
 			<Top data={data.coreData} />
 			<Navbar data={data.navbar} />
 			<Welcome data={data.welcome} />
@@ -28,8 +33,8 @@ export default function Home(props: { params: { lang: "en" | "ru" | "uz" } }) {
 			<Employees data={data.employees} />
 			<Contact data={mergeObject(data.contact, data.coreData)} />
 			<Footer data={mergeObject(data.footer, data.coreData)} />
-			<ContactModal />
-		</Suspense>
+			<ContactModal lang={props.params.lang} />
+		</>
 	);
 }
 
