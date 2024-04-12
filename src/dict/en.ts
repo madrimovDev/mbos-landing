@@ -9,11 +9,15 @@ const data: Data = {
 			},
 			{
 				href: "about",
-				title: "About",
+				title: "About Company",
 			},
 			{
 				href: "projects",
 				title: "Projects",
+			},
+			{
+				href: "services",
+				title: "Services",
 			},
 			{
 				href: "employees",
@@ -35,8 +39,8 @@ const data: Data = {
 			{
 				img: "/images/bg.jpg",
 				title: {
-					mark: "Experience",
-					text: "10 years of employee experience",
+					mark: "10 years of",
+					text: "experienced employees",
 				},
 				subtitle: "We create conveniences for you",
 			},
@@ -53,11 +57,11 @@ const data: Data = {
 	header: {
 		subtitle: "Multi Branch Online Service",
 		title: {
-			text: "We Save",
-			mark: "Your Time",
+			text: "We Manage",
+			mark: "Your Time Efficiently",
 		},
 		description:
-			"MBOS - innovative solutions. We develop websites, mobile applications, telegram bots, online stores, and CRM systems. With our services, you'll be at the forefront of innovations.",
+			"MBOS - innovative solutions. We develop websites, mobile apps, telegram bots, online stores, and CRM systems. Join us with our innovative solutions.",
 		contact: "Contact",
 		aboutUs: "About Us",
 		partners: {
@@ -70,22 +74,23 @@ const data: Data = {
 		},
 	},
 	about: {
-		sectionTitle: "About",
+		sectionTitle: "About Company",
 		title: "MBOS",
 		subtitle: "Multi Branch Online Service",
 		descriptions: [
-			"The company was founded in February 2020 by Mansur Yusupov, Dilshod Sahobiddinov, and Zafarbek Sobirov, starting with the Mbos startup project, which was eventually named Mbos company.",
-			'In order to implement the President\'s decision on "broad introduction of digital economy and e-government," our company develops management systems for enterprises in other areas, including website development, mobile applications.',
+			"The company was founded in February 2020 by Yusupov Mansur, Sahabutdinov Dilshod, and Sobirov Zafarbek with the Mbos startup project, and the company was also named Mbos.",
+			'In order to implement the President\'s resolution "On measures to widely introduce the digital economy and electronic government" dated April 28, 2020, the company also engages in developing systems in other areas, including the development of management systems for corporate organizations, in addition to websites, mobile apps.',
 		],
 	},
 	projects: {
 		sectionTitle: "Projects",
 		projects: [
 			{
-				name: "MBOS - Online Navbar Service",
+				name: "MBOS - Online Queue Service",
+				type: 'mbos',
 				descriptions: [
-					"- We develop a navbar system for the most popular queues in medicine, clinics, metros, car washes.",
-					"- The online navbar takes orders and solves them on time. Additionally, cashbacks are provided from subways and car washes during certain days. They can be used by accumulating them.",
+					"- Currently, in the medical field where queues are most monitored, we systematize queues in community organizations such as clinics, banks, car showrooms, car washes, and gas stations, increasing the efficiency of customer and employee time.",
+					"- Online queue takes your time promptly. In addition, during certain months, cashbacks are also given from gas stations and car washes. Collect cashbacks and enjoy free services from Mbos platform.",
 				],
 				imgs: [
 					{
@@ -125,10 +130,12 @@ const data: Data = {
 				],
 			},
 			{
-				name: "Taskie - Enterprise Activity Automation",
+				name: "Taskie - Automating Company Operations",
+				type: 'taskie',
 				descriptions: [
-					"- Taskie allows employees to arrive on time, receive online tasks provided in electronic form before the deadline.",
-					"- Real-time tracking of employee location even if they haven't completed their tasks on time.",
+					"- Taskie software provides online electronic assignment delivery to employees with deadlines, and it collects information without delaying the completion of tasks by employees.",
+					"- It is possible to track the location of employees during work time.",
+					"- It is also possible to identify where the employees are and their location through the location system.",
 				],
 				imgs: [
 					{
@@ -160,9 +167,16 @@ const data: Data = {
 						img: "/",
 					},
 				],
+				addonLinks: [
+					{
+						name: "Try the demo version",
+						link: ''
+					}
+				]
 			},
 			{
 				name: "MBOS GPS",
+				type: 'gps',
 				imgs: [
 					{
 						src: "/images/gps-tracking.jpg",
@@ -172,42 +186,42 @@ const data: Data = {
 					},
 				],
 				descriptions: [
-					"GPS can be used by business owners, entrepreneurs for their business operations.",
-					"Features include measuring fuel consumption, distance traveled, speed, and installation on vehicles with refrigeration units.",
+					"Business owners, entrepreneurs can apply GPS to their business activities.",
+					"Monitoring the whereabouts of vehicles, fuel consumption, distance traveled, speed of movement, and also measuring the temperature of heated and cooled vehicles is possible. Installation is possible for vehicles traveling abroad as well.",
 				],
 			},
 		],
 		contact: "Contact",
 	},
 	services: {
-		sectionTitle: "Services",
+		sectionTitle: "Our Services",
 		services: [
 			{
 				title: "Websites",
 				description:
-					"A virtual platform providing targeted information and services electronically via the Internet.",
-				type: "web",
+					"A virtual platform located on the Internet, providing purposeful information and services electronically.",
+				type: "website",
 				trigger: "web-site",
 			},
 			{
 				title: "Online Stores",
 				description:
-					"Services for selling and delivering goods online. Fast and convenient, with security and delivery efficiency.",
-				type: "e-commerce",
+					"Services of selling and delivering products via the Internet. Fast and convenience, safety and efficiency of delivery.",
+				type: "e-com", //enum
 				trigger: "e-commerce",
 			},
 			{
 				title: "CRM Systems",
 				description:
-					"Software for automating customer relationship management processes and providing services to companies.",
-				type: "crm",
+					"A software solution for managing relationships with customers and automating service processes for companies.",
+				type: "crm", // enum
 				trigger: "crm",
 			},
 			{
 				title: "Telegram Bots",
 				description:
-					"A program operating in Telegram. Helps automate communication with customers, offer services.",
-				type: "bot",
+					"A program working on Telegram. It helps automate communication with customers and offer services.",
+				type: "bot", // enum
 				trigger: "tg-bot",
 			},
 		],
@@ -218,14 +232,14 @@ const data: Data = {
 			{
 				img: "/images/xodimlar/azizbek.jpg",
 				blurred: "/images/xodimlar/azizbek-blur.jpg",
-				name: "Abdullaev Azizbek",
-				position: "Customer Relationship Manager",
+				name: "Abdullayev Azizbek",
+				position: "B2B Manager",
 			},
 			{
 				img: "/images/xodimlar/dilshod.jpg",
 				blurred: "/images/xodimlar/dilshod-blur.jpg",
 				name: "Sahabutdinov Dilshod",
-				position: "Head of Technical Department",
+				position: "Technical Department Leader",
 			},
 			{
 				img: "/images/xodimlar/madina.jpg",
@@ -237,30 +251,30 @@ const data: Data = {
 				img: "/images/xodimlar/mansur.jpg",
 				blurred: "/images/xodimlar/mansur-blur.jpg",
 				name: "Yusupov Mansur",
-				position: "Company Director",
+				position: "Company Leader",
 			},
 			{
 				img: "/images/xodimlar/muxtor.jpg",
 				blurred: "/images/xodimlar/muxtor-blur.jpg",
-				name: "Saparboev Mukhtor",
+				name: "Saparboyev Muxtor",
 				position: "Developer",
 			},
 			{
 				img: "/images/xodimlar/quvondiq.jpg",
 				blurred: "/images/xodimlar/quvondiq-blur.jpg",
-				name: "Kurbaniozov Quvondiq",
-				position: "Sales Department Head",
+				name: "Kurbaniyozov Quvondiq",
+				position: "Sales Department Leader",
 			},
 			{
 				img: "/images/xodimlar/shoxida.jpg",
 				blurred: "/images/xodimlar/shoxida-blur.jpg",
-				name: "Rajabboeva Shohida",
-				position: "Finance Department Head",
+				name: "Rajabboyeva Shohida",
+				position: "Finance Department Leader",
 			},
 			{
 				img: "/images/xodimlar/xudoyshukur.jpg",
 				blurred: "/images/xodimlar/xudoyshukur-blur.jpg",
-				name: "Mashirov Khudoyshukur",
+				name: "Masharipov Xudoyshukur",
 				position: "Technical Developer",
 			},
 		],
@@ -271,11 +285,11 @@ const data: Data = {
 		phonePlaceholder: "Phone",
 		message: "Message",
 		send: "Send",
-		location: "Tinchlik Street, House 6a, Urgench, Khorezm Region, Uzbekistan",
+		location: "6A Tinchlik Street, Urgench, Khorezm Region, Uzbekistan",
 	},
 	footer: {
 		description:
-			"Various updates are regularly conducted in the application, ensuring continuous application updates, which in turn create many conveniences for users.",
+			"The app regularly provides many exciting updates. Additionally, the app is constantly updated, providing users with many conveniences.",
 		siteMap: {
 			title: "Site Map",
 			items: [
@@ -285,7 +299,7 @@ const data: Data = {
 				},
 				{
 					href: "about",
-					title: "About",
+					title: "About Company",
 				},
 				{
 					href: "projects",
@@ -302,7 +316,7 @@ const data: Data = {
 			items: [
 				{
 					href: "#mbos",
-					title: "Mbos - Online Navbar",
+					title: "Mbos - Online Queue",
 				},
 				{
 					href: "#taskie",
@@ -310,24 +324,36 @@ const data: Data = {
 				},
 				{
 					href: "#gps",
-					title: "Tracking",
+					title: "Monitoring",
 				},
 				{
 					href: "#mbos",
-					title: "Electronic Navbar",
+					title: "Electronic Queue",
 				},
 			],
 		},
 	},
 	coreData: {
-		location: "Tinchlik Street, House 6a, Urgench, Khorezm Region, Uzbekistan",
+		location: "6A Tinchlik Street, Urgench, Khorezm Region, Uzbekistan",
 		phone: ["+998 71 200 11 51", "+998 62 227 76 76"],
 		email: "example@mail.co",
 		telegram: "https://t.me/mbosuzb",
 		instagram: "https://instagram.com/mbosuzb",
 		facebook: "https://fb.com/mbosuzb",
 	},
+	modalData: {
+		notification: {
+			marked: 'Thank you for choosing us',
+			contact: (phone: string[]) => `You can contact us directly at ${phone.join(' or ')}`,
+			message: "We will contact you shortly after your message is sent."
+		},
+		namePlaceholder: 'Enter your name',
+		phonePlaceholder: 'Enter your phone number',
+		phoneExample: 'Example: +99891 123 45 67',
+		messagePlaceholder: 'Enter the content of your message',
+		sendMessage: 'Send Message',
+		successMessage: 'Your message has been sent'
+	}
 };
 
 export default data;
-

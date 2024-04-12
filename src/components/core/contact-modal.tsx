@@ -6,6 +6,8 @@ import { useRef } from "react";
 import { X } from "lucide-react";
 import useKeyDown from "@/shared/hooks/useKeyDown";
 import { Button } from "@/shared/ui";
+import { useForm } from "@/shared/hooks/useForm";
+import { t } from "@/dict";
 
 const wrapperVariant: Variants = {
 	initial: {
@@ -49,11 +51,42 @@ const modalVariants: Variants = {
 		},
 	},
 };
-
-export default function ContactModal() {
-	const { isOpen, closeModal } = useModalStore();
+interface Props {
+	  lang: "en" | "ru" | "uz"  
+}
+export default function ContactModal({lang}: Props) {
+	const { isOpen, closeModal, getLink, target } = useModalStore();
 	const modalRef = useRef<HTMLDivElement>(null);
+	const data = t(lang)
+	const { submitHandler } = useForm();
 	useKeyDown("Escape", closeModal);
+	const onSubmit = (data: any) => {
+		const link = getLink(target);
+		console.log(link, target);
+		if (link) {
+			const url = new URL(link?.link, "https://lead.mbos.uz");
+			const searchs = Object.fromEntries(url.searchParams.entries());
+			const l = Object.keys(searchs)
+				.map((key) => `${key}=${searchs[key]}`)
+				.join("&");
+
+			fetch(`https://lead.mbos.uz/api/v1/lead?${l}`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					full_name: data.full_name,
+					phone: data.phone,
+					description: data.message,
+				}),
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					console.log(data);
+				});
+		}
+	};
 
 	return (
 		<AnimatePresence mode="wait">
@@ -76,28 +109,26 @@ export default function ContactModal() {
 						>
 							<X size="1em" />
 						</button>
-						<div className="space-y-4">
-							<h3 className="text-xl font-bold">Biz bilan bog&apos;lanish</h3>
+						<div className="space-y-4 mt-4">
 							<blockquote className="bg-gray-50 text-sm leading-relaxed text-gray-500 pl-2 py-2 border-l-4 border-l-primary">
-								Xabaringiz yuborilgandan so&apos;ng tez orada siz bilan
-								bog&apos;lanamiz.
+								{data.modalData.notification.message}
 								<div className="mt-2">
-									To&apos;g&apos;ridan to&apos;g&apos;ri biz bilan
-									bo&apos;g&apos;lanish uchun{" "}
-									<b className="whitespace-nowrap">+99 891 123 45 67</b>{" "}
-									raqamiga qo&apos;ng&apos;iroq qilishingiz mumkin
+									{data.modalData.notification.contact(data.coreData.phone)}
 								</div>
 								<div className="mt-2 font-bold">
-									Bizni tanlaganingiz uchun rahmat
+									{data.modalData.notification.marked}
 								</div>
 							</blockquote>
-							<form className="space-y-4 ">
+							<form
+								className="space-y-4 "
+								onSubmit={submitHandler(onSubmit)}
+							>
 								<div>
 									<input
 										type="text"
 										name="full_name"
 										className="border border-gray-300 w-full rounded-md p-2"
-										placeholder="Ismingizni kiriting"
+										placeholder={data.modalData.namePlaceholder}
 									/>
 								</div>
 								<div>
@@ -105,20 +136,20 @@ export default function ContactModal() {
 										type="tel"
 										name="phone"
 										className="border border-gray-300 w-full rounded-md p-2"
-										placeholder="Telefon raqamingnizni kiritng"
+										placeholder={data.modalData.phonePlaceholder}
 									/>
 									<p className="mt-1 text-xs text-gray-500">
-										Na`muna: +99891 123 45 67
+										{data.modalData.phoneExample}
 									</p>
 								</div>
 								<div>
 									<textarea
 										name="message"
 										className="border border-gray-300 w-full rounded-md p-2"
-										placeholder="Murojaat mazmunini yozing"
+										placeholder={data.modalData.messagePlaceholder}
 									/>
 								</div>
-								<Button className="w-full rounded-md">Xabarni yuborish</Button>
+								<Button className="w-full rounded-md">{data.modalData.sendMessage}</Button>
 							</form>
 						</div>
 					</motion.div>

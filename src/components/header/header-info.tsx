@@ -30,32 +30,34 @@ export default function HeaderInfo({ data }: Props) {
 	return (
 		<MotionGrow
 			variants={headerInfoVariants}
-			className="flex flex-col gap-4 items-start relative"
+			className="flex flex-col gap-8 items-start relative"
 		>
-			<motion.h2
-				variants={headerInfoVariants}
-				className="px-2 py-1 text-sm border font-bold border-primary rounded-full inline-block"
-			>
-				{data.subtitle}
-			</motion.h2>
-			<motion.h1
-				variants={headerInfoVariants}
-				className="text-3xl xl:text-4xl 2xl:text-5xl"
-			>
-				<motion.span
+			<div>
+				<motion.h2
 					variants={headerInfoVariants}
-					className="text-semibold"
+					className="px-2 py-1 mb-4 text-sm border font-bold border-primary rounded-full inline-block"
 				>
-					{data.title.text}
-				</motion.span>{" "}
-				<br />
-				<motion.span
+					{data.subtitle}
+				</motion.h2>
+				<motion.h1
 					variants={headerInfoVariants}
-					className="font-extrabold text-black"
+					className="text-3xl xl:text-4xl 2xl:text-5xl"
 				>
-					{data.title.mark}
-				</motion.span>
-			</motion.h1>
+					<motion.span
+						variants={headerInfoVariants}
+						className="text-semibold"
+					>
+						{data.title.text}
+					</motion.span>{" "}
+					<br />
+					<motion.span
+						variants={headerInfoVariants}
+						className="font-extrabold text-black"
+					>
+						{data.title.mark}
+					</motion.span>
+				</motion.h1>
+			</div>
 			<motion.p
 				variants={headerInfoVariants}
 				className="leading-8 text-lightBlack font-semibold"
@@ -66,7 +68,7 @@ export default function HeaderInfo({ data }: Props) {
 				variants={headerInfoVariants}
 				className="flex gap-4 items-center"
 			>
-				<Button onClick={openModal}>{data.contact}</Button>
+				<Button onClick={() => openModal('common')}>{data.contact}</Button>
 				<button className="inline-flex gap-1 items-center">
 					<span>
 						<PlayCircle />

@@ -15,12 +15,12 @@ export default function Services({ data }: Props) {
 				{data.services.map((service) => (
 					<div
 						key={service.title}
-						onClick={openModal}
+						onClick={() => openModal(service.type)}
 						className="bg-gray-50 px-4 py-8 rounded-lg group flex flex-col justify-center items-start gap-4 cursor-pointer hover:scale-105 hover:shadow-lg transition-all"
 					>
 						<div className="flex items-center gap-4">
 							<span className="group-hover:text-primary transition-all">
-								{service.type === "web" ? (
+								{service.type === "website" ? (
 									<Wallpaper
 										size="2.5em"
 										strokeWidth={1}
@@ -30,7 +30,7 @@ export default function Services({ data }: Props) {
 										size="2.5em"
 										strokeWidth={1}
 									/>
-								) : service.type === "e-commerce" ? (
+								) : service.type === "e-com" ? (
 									<Store
 										size="2.5em"
 										strokeWidth={1}
