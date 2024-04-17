@@ -342,6 +342,9 @@ const data: Data = {
 		facebook: "https://fb.com/mbosuzb",
 	},
 	modalData: {
+		messageTitle: '',
+		nameTitle: '',
+		phoneTitle: '',
 		notification: {
 			marked: 'Спасибо за выбор нас',
 			contact: (phone: string[]) => `Вы можете связаться с нами по ${phone.join(' или ')}, чтобы связаться с нами непосредственно`,
