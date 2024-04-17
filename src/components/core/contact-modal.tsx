@@ -52,17 +52,16 @@ const modalVariants: Variants = {
 	},
 };
 interface Props {
-	  lang: "en" | "ru" | "uz"  
+	lang: "en" | "ru" | "uz";
 }
-export default function ContactModal({lang}: Props) {
+export default function ContactModal({ lang }: Props) {
 	const { isOpen, closeModal, getLink, target } = useModalStore();
 	const modalRef = useRef<HTMLDivElement>(null);
-	const data = t(lang)
+	const data = t(lang);
 	const { submitHandler } = useForm();
 	useKeyDown("Escape", closeModal);
 	const onSubmit = (data: any) => {
 		const link = getLink(target);
-		console.log(link, target);
 		if (link) {
 			const url = new URL(link?.link, "https://lead.mbos.uz");
 			const searchs = Object.fromEntries(url.searchParams.entries());
@@ -80,11 +79,9 @@ export default function ContactModal({lang}: Props) {
 					phone: data.phone,
 					description: data.message,
 				}),
-			})
-				.then((res) => res.json())
-				.then((data) => {
-					console.log(data);
-				});
+			}).then((data) => {
+				console.log(data);
+			});
 		}
 	};
 
@@ -126,7 +123,19 @@ export default function ContactModal({lang}: Props) {
 								<div>
 									<input
 										type="text"
+										required
+										title={data.modalData.nameTitle}
 										name="full_name"
+										minLength={3}
+										maxLength={100}
+										onInvalid={(e) => {
+											const el = e.target as HTMLInputElement;
+
+											if (el.validity.valid) return;
+											(e.target as HTMLInputElement).setCustomValidity(
+												data.modalData.nameTitle
+											);
+										}}
 										className="border border-gray-300 w-full rounded-md p-2"
 										placeholder={data.modalData.namePlaceholder}
 									/>
@@ -135,6 +144,18 @@ export default function ContactModal({lang}: Props) {
 									<input
 										type="tel"
 										name="phone"
+										title={data.modalData.phoneTitle}
+										required
+										minLength={3}
+										maxLength={100}
+										onInvalid={(e) => {
+											const el = e.target as HTMLInputElement;
+											if (el.validity.patternMismatch) return;
+											(e.target as HTMLInputElement).setCustomValidity(
+												data.modalData.phoneTitle
+											);
+										}}
+										pattern="^(?:\+998)?\d{9}$"
 										className="border border-gray-300 w-full rounded-md p-2"
 										placeholder={data.modalData.phonePlaceholder}
 									/>
@@ -149,7 +170,9 @@ export default function ContactModal({lang}: Props) {
 										placeholder={data.modalData.messagePlaceholder}
 									/>
 								</div>
-								<Button className="w-full rounded-md">{data.modalData.sendMessage}</Button>
+								<Button className="w-full rounded-md">
+									{data.modalData.sendMessage}
+								</Button>
 							</form>
 						</div>
 					</motion.div>

@@ -23,7 +23,6 @@ export default function Home(props: { params: { lang: "en" | "ru" | "uz" } }) {
 	const data = t(props.params.lang);
 	return (
 		<>
-			<Top data={data.coreData} />
 			<Navbar data={data.navbar} />
 			<Welcome data={data.welcome} />
 			<Header data={data.header} />

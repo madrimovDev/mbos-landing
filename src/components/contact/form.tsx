@@ -3,6 +3,7 @@ import { ContactInfo, CoreData } from "@/dict/types";
 import { useForm } from "@/shared/hooks/useForm";
 import { Button } from "@/shared/ui";
 import { Mail, Phone, Send } from "lucide-react";
+import useModalStore from "../core/contact-modal-store";
 
 interface FormData {
 	full_name: string;
@@ -14,9 +15,31 @@ interface Props {
 }
 export default function Form({ data }: Props) {
 	const { submitHandler } = useForm();
+	const { getLink } = useModalStore();
 
 	const onSubmit = (data: FormData) => {
-		console.log(data);
+		const link = getLink("common");
+		if (link) {
+			const url = new URL(link?.link, "https://lead.mbos.uz");
+			const searchs = Object.fromEntries(url.searchParams.entries());
+			const l = Object.keys(searchs)
+				.map((key) => `${key}=${searchs[key]}`)
+				.join("&");
+
+			fetch(`https://lead.mbos.uz/api/v1/lead?${l}`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					full_name: data.full_name,
+					phone: data.phone,
+					description: data.message,
+				}),
+			}).then((data) => {
+				console.log(data);
+			});
+		}
 	};
 
 	return (
@@ -37,7 +60,7 @@ export default function Form({ data }: Props) {
 				required
 				name="phone"
 				type="tel"
-				pattern="^\+998\d{2}\d{7}$"
+				pattern="^(?:\+998)?\d{9}$"
 				title="+998YYXXXXXXX formatidagi O'zbekiston telefon raqamini kiriting"
 			/>
 			<textarea
@@ -65,8 +88,7 @@ export default function Form({ data }: Props) {
 					className="flex gap-2 items-center"
 					href="http://t.me/mbos_official"
 				>
-					<Send size="1.4em" />
-					@{data.telegram.split('/').at(-1)}
+					<Send size="1.4em" />@{data.telegram.split("/").at(-1)}
 				</a>
 			</div>
 		</form>

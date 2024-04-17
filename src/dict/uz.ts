@@ -32,25 +32,26 @@ const data: Data = {
 				img: "/images/bg.jpg",
 				title: {
 					mark: "MBOS",
-					text: "IT Kompaniyasiga xush kelibsiz",
+					text: "MBOS IT Kompaniyasiga xush kelibsiz",
 				},
-				subtitle: "Biz sizga qulaykilar yaratamiz",
+				subtitle: "Biz sizga qulaylik yaratamiz",
 			},
 			{
 				img: "/images/bg.jpg",
 				title: {
 					mark: "10 yillik",
-					text: "tajribaga ega xodimlar",
+					text: "10 yillik Tajribaga ega dasturchilar jamoasi",
 				},
-				subtitle: "Biz sizga qulaykilar yaratamiz",
+				subtitle: "Biz sizga qulaylik yaratamiz",
+
 			},
 			{
 				img: "/images/bg.jpg",
 				title: {
-					mark: "Sifatli",
-					text: "Xizmatlarimizni taklif etamiz",
+					mark: "innovatsion",
+					text: "Biznesingiz uchun innovatsion yechimlar",
 				},
-				subtitle: "Biz sizga qulaykilar yaratamiz",
+				subtitle: "Biz sizga qulaylik yaratamiz",
 			},
 		],
 	},
@@ -89,8 +90,8 @@ const data: Data = {
 				name: "MBOS - Online Navbat Xizmati",
 				type: 'mbos',
 				descriptions: [
-					"- Hozirgi kunda eng ko’p navbatlar kuzatilib turgan Tibbiyot sohasida, Klinikalarda, Bank, Avtosalon, Avtomoyka, Gaz to’ldirish shaxobchalarida navbat kutish jamoat tashkilotlarida mijozlar vaqtini ishchi xodimlar ish samaradorligini oshirishda yechim yaratib innovatsion onlayn va offlayn tarzda navbatlarni tizimlashtirib beramiz.",
-					"- Onlayn navbat olib o’z vaqtida kelib ishini hal qilib keladi.Undan tashqari yoz oylarida Gaz to’ldirish shaxobchalaridan va Avto moykalardan Cashbacklar ham beriladi. Cashbacklarni to’plab Mbos platforma xizmatlaridan bepul foydalaning.",
+					"- Hozirgi kunda eng ko`p navbatlar kuzatilib turgan Tibbiyot sohasida, Klinikalarda, Bank, Avtosalon, Avtomoyka, Gaz to`ldirish shaxobchalarida navbat kutish jamoat tashkilotlarida mijozlar vaqtini ishchi xodimlar ish samaradorligini oshirishda yechim yaratib innovatsion onlayn va offlayn tarzda navbatlarni tizimlashtirib beramiz.",
+					"- Onlayn navbat olib o`z vaqtida kelib ishini hal qilib ketadi.Undan tashqari yoz oylarida Gaz to`ldirish shaxobchalaridan va Avto moykalardan Cashbacklar ham beriladi. Cashbacklarni to`plab Mbos platforma xizmatlaridan bepul foydalaning.",
 				],
 				imgs: [
 					{
@@ -133,8 +134,8 @@ const data: Data = {
 				name: "Taskie - Korxonaning ish faoliyatini avtomatlashtirish",
 				type: 'taskie',
 				descriptions: [
-					"- Taskie dasturi Hodimlarni kelib ketishi asosan vaqtida kelishi, topshiriqlar online elektron beriladi dedline vaqtida o’zi hodimlarni topshiriqlarini kechiktirmasdan ma'lumot oladi",
-					"- Hodimlarni ish vaqtida qayerda yurganini lokatsiya orqali teshkirib tursa ham bo’ladi",
+					"- Taskie dasturi Hodimlarni kelib ketishi asosan vaqtida kelishi, topshiriqlar online elektron beriladi dedline vaqtida o`zi hodimlarni topshiriqlarini kechiktirmasdan ma'lumot oladi",
+					"- Hodimlarni ish vaqtida qayerda yurganini lokatsiya orqali teshkirib tursa ham bo`ladi",
 					"- Hodimlarni ish vaqtida qayerda ekanligini xamda lokatsiya tizimi orqali teshkirish imkoni mavjud"
 				],
 				imgs: [
@@ -187,7 +188,7 @@ const data: Data = {
 				],
 				descriptions: [
 					"GPS ni  biznes egalari, tadbirkorlar o'z ish faoliyatlariga tadbiq qilishlari mumkin.",
-					"Mashinalar qayerdaligi, qancha yoqilg'i sarf qilgani, qancha masofa bosib o'tgani, qancha tezlikda harakatlangani, undan tashqari muzlatgichli mashinalar bo'lsa issiq va sovuh havo haroratini o'lchab borish imkoniyatlari mavjud. Chet elga chiqadigan mashinalarga ham o'rnatish mumkin",
+					"Mashinalar qayerdaligi, qancha yoqilg'i sarf qilgani, qancha masofa bosib o'tgani, qancha tezlikda harakatlangani, undan tashqari muzlatgichli mashinalar bo'lsa issiq va sovuq havo haroratini o'lchab borish imkoniyatlari mavjud. Chet elga chiqadigan mashinalarga ham o'rnatish mumkin",
 				],
 			},
 		],
@@ -206,7 +207,7 @@ const data: Data = {
 			{
 				title: "Online Dokonlar",
 				description:
-					"Internet orqali mahsulot sotish va etkazib berish xizmatlari. Tez va qulaylik, xavfsizlik va yetkazib berish samaradorligi.",
+					"Internet orqali mahsulot sotish va yetkazib berish xizmatlari. Tez va qulaylik, xavfsizlik va yetkazib berish samaradorligi.",
 				type: "e-com", //enum
 				trigger: "e-commerce",
 			},
@@ -348,9 +349,12 @@ const data: Data = {
 			message: "Xabaringiz yuborilgandan so'ng tez orada siz bilan bog'lanamiz."
 		},
 		namePlaceholder: 'Ismingizni kiriting',
+		nameTitle: 'Ismingizni kiriting. Kamida 3 ta harf kiritishingiz kerak',
 		phonePlaceholder: 'Telefon raqamingizni kiriting',
 		phoneExample: 'Na`muna: +99891 123 45 67',
+		phoneTitle: 'Telefon raqamingizni kiriting. Kamida 11 yoki 9 ta son kiritishingiz kerak',
 		messagePlaceholder: 'Murojaat mazmunini kiriting',
+		messageTitle: 'Xabaringiz mazmunini qisqacha yozing',
 		sendMessage: 'Xabarni yuborish',
 		successMessage: 'Xabaringiz yuborildi'
 	}

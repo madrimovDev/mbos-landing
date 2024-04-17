@@ -118,9 +118,12 @@ interface ModalData {
 			message: string
 	},
 	namePlaceholder: string,
+	nameTitle: string
 	phonePlaceholder: string
+	phoneTitle: string
 	phoneExample: string
 	messagePlaceholder: string
+	messageTitle: string
 	successMessage: string
 	sendMessage: string
 }
