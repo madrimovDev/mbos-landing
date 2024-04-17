@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Fragment } from "react";
 
 interface Props {
 	title: {
@@ -9,12 +10,24 @@ interface Props {
 	subtitle: string;
 	img: string;
 	animate: boolean;
-	index: number
+	index: number;
 }
-const imgs = ['/images/bg-1.jpg','/images/bg-2.jpg','/images/bg-3.jpg']
-export default function Slide1({ subtitle, title, img, animate, index }: Props) {
+const imgs = ["/images/mbos-company/1.JPG", "/images/mbos-company/2.JPG", "/images/mbos-company/3.JPG"];
+export default function Slide1({
+	subtitle,
+	title,
+	img,
+	animate,
+	index,
+}: Props) {
+	const text = (text: string) => {
+		const textArray = text.split(" ");
+		const firstHalf = textArray.slice(0, Math.ceil(textArray.length / 2));
+		const secondHalf = textArray.slice(textArray.length / 2, textArray.length);
+		return [firstHalf.join(" "), secondHalf.join(" ")] as const;
+	};
 	return (
-		<div className="w-full h-[calc(100vh-91px)] md:h-[calc(100vh-110px)] grid place-items-center bg-black">
+		<div className="w-full h-[calc(100vh-65px)] md:h-[calc(100vh-80px)] grid place-items-center bg-black">
 			<div className="container text-white relative z-10">
 				<motion.h1
 					animate={{
@@ -26,9 +39,10 @@ export default function Slide1({ subtitle, title, img, animate, index }: Props) 
 							type: "keyframe",
 						},
 					}}
-					className="text-center text-4xl sm:text-5xl md:text-6xl font-black text-white"
+					className="text-center text-4xl sm:text-5xl md:text-7xl font-black text-white capitalize"
 				>
-					<span className="text-primary">{title.mark}</span> {title.text}
+					<span className="leading-snug">{text(title.text)[0]}</span> <br />
+					<span className="">{text(title.text)[1]}</span>
 				</motion.h1>
 				<motion.h2
 					animate={{
@@ -79,12 +93,12 @@ export default function Slide1({ subtitle, title, img, animate, index }: Props) 
 				</svg>
 			</button>
 			<div className="w-full h-full absolute inset-x-0 bottom-0 z-[1]">
-				<div className="w-full h-full absolute inset-0 bg-gradient-to-b from-black via-black/60  to-black/20 z-[1]" />
+				<div className="w-full h-full absolute inset-0 bg-gradient-to-b from-black/40   to-black/0 z-[1]" />
 				<div
 					style={{
 						backgroundImage: `url(${imgs[index]})`,
 					}}
-					className={`w-full h-full bg-bottom bg-cover grayscale opacity-50`}
+					className={`w-full h-full bg-bottom bg-cover  opacity-50`}
 				/>
 			</div>
 		</div>

@@ -33,7 +33,7 @@ export default function AboutMedia() {
 			>
 				 
 				<Image
-					src="/images/developer.jpg"
+					src="/images/mbos-company/1.JPG"
 					alt="Developer"
 					className="h-full object-cover rounded-xl"
 					rootClassName="h-full"
@@ -48,7 +48,7 @@ export default function AboutMedia() {
 			>
 				 
 				<Image
-					src="/images/developer.jpg"
+					src="/images/mbos-company/2.JPG"
 					alt="Developer"
 					className="h-full object-cover rounded-xl"
 					rootClassName="h-full"
@@ -63,7 +63,7 @@ export default function AboutMedia() {
 			>
 				 
 				<Image
-					src="/images/developer.jpg"
+					src="/images/mbos-company/3.JPG"
 					alt="Developer"
 					className="h-full object-cover rounded-xl"
 					rootClassName="h-full"
@@ -77,7 +77,7 @@ export default function AboutMedia() {
 				className="row-span-4 col-start-2 row-start-3 rounded-xl overflow-hidden relative group border-4 "
 			>
 				<Image
-					src="/images/developer.jpg"
+					src="/images/mbos-company/4.JPG"
 					className="h-full object-cover rounded-xl"
 					rootClassName="h-full"
 					alt="Developer"

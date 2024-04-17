@@ -34,4 +34,3 @@ const LogoRenderFunction: ForwardRefRenderFunction<
 };
 
 export default forwardRef(LogoRenderFunction);
-
